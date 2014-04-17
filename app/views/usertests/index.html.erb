@@ -6,6 +6,7 @@
 	    <%= t.title %>
 	    <%= link_to "bekijken", usertest_path(t) %>
 	    <%= link_to "bewerken", edit_usertest_path(t) %>
+	    <%= link_to 'Verwijderen', usertest_path(t), method: :delete, data: { confirm: 'Weet je het heul zeker??' } %>
 	  </div>
 	<% end %>
 </div>

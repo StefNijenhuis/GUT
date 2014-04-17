@@ -16,7 +16,11 @@ class UsertestsController < ApplicationController
 		end
 	end
 
-	def delete
+	def destroy
+		@test = Usertest.find(params[:id])
+		@test.destroy
+
+		redirect_to usertests_path
 	end
 
 	def update
