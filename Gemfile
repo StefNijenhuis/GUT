@@ -20,6 +20,14 @@ gem 'coffee-rails', '~> 4.0.0'
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
+gem 'simple_form'
+
+gem 'twitter-bootstrap-rails'
+gem 'bootstrap-datepicker-rails'
+gem 'therubyracer'
+gem 'less-rails'
+
+gem 'ckeditor'
 
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
 gem 'turbolinks'

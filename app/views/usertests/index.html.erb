@@ -1,0 +1,12 @@
+<h1> Overzicht van alle tests</h1>
+
+<div id="tests">
+	<% @tests.each do |t| %>
+	  <div class="test">
+	    <%= t.title %>
+	    <%= link_to "bekijken", usertest_path(t) %>
+	  </div>
+	<% end %>
+</div>
+
+<%= link_to "Nieuwe test toevoegen", new_usertest_path %>
