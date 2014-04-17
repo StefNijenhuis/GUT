@@ -1,17 +1,32 @@
 class UsertestsController < ApplicationController
 	def new
+		@test = Usertest.new()
 	end
 
 	def create
 		@test = Usertest.new(test_params)
 		@test.status = 0
-		@test.save
+
+		#abort(@test.inspect)
+
+		if @test.save
+			redirect_to @test
+		else
+			render 'new'
+		end
 	end
 
 	def delete
 	end
 
 	def update
+		@test = Usertest.find(params[:id])
+ 
+		if @test.update(test_params)
+			redirect_to @test
+		else
+			render 'edit'
+		end
 	end
 
 	def index
@@ -19,7 +34,7 @@ class UsertestsController < ApplicationController
 	end
 
 	def edit
-		@test = Usertest.find(:id)
+		@test = Usertest.find(params[:id])
 	end
 
 	def show
@@ -27,7 +42,7 @@ class UsertestsController < ApplicationController
 	end
 
 
-	private
+private
   def test_params
     params.require(:usertest).permit(:title, :introtext, :start_date, :end_date)
   end

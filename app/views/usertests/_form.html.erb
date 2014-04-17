@@ -1,0 +1,32 @@
+<%= simple_form_for @test do |f| %>
+
+	<% if @test.errors.any? %>
+		<div id="error_explanation">
+			<ul>
+				<% @test.errors.full_messages.each do |msg| %>
+				  <li><%= msg %></li>
+				<% end %>
+			</ul>
+		</div>
+	<% end %>
+
+	<p>
+		<%= f.label :titel %><br>
+		<%= f.text_field :title %>
+	</p>
+
+		<%= f.label :introtext %>
+		<%= f.text_area :introtext %>
+
+	<p>
+		<%= f.label :start_date %>
+		<%= f.date_select(:start_date) %>
+	</p>
+	<p>
+		<%= f.label :end_date %>
+		<%= f.date_select(:end_date) %>
+	</p>
+	<p>
+	<%= f.submit %>
+	</p>
+<% end %>
