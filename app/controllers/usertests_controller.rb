@@ -4,8 +4,6 @@ class UsertestsController < ApplicationController
 
 	def create
 		@test = Usertest.new(test_params)
-
-		#abort(@test.inspect)
 		@test.status = 0
 		@test.save
 	end
@@ -21,11 +19,13 @@ class UsertestsController < ApplicationController
 	end
 
 	def edit
-			@test = Usertest.find(:id)
+		@test = Usertest.find(:id)
 	end
 
 	def show
+		@test = Usertest.find(params[:id])
 	end
+
 
 	private
   def test_params
