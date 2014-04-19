@@ -6,7 +6,7 @@ class UsertestsController < ApplicationController
 	def create
 		@test = Usertest.new(test_params)
 		@test.status = 0
-
+		@test.user = current_user
 		#abort(@test.inspect)
 
 		if @test.save

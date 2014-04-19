@@ -1,0 +1,11 @@
+<h1><%= @user.email %></h1>
+
+<h2>Alle tests gemaakt door jou:</h2>
+<% @user.usertests.each do |t| %>
+  <div class="test">
+    <%= t.title %>
+    <%= link_to "bekijken", usertest_path(t) %>
+    <%= link_to "bewerken", edit_usertest_path(t) %>
+    <%= link_to 'Verwijderen', usertest_path(t), method: :delete, data: { confirm: 'Weet je het heul zeker??' } %>
+  </div>
+<% end %>
