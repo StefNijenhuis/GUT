@@ -3,10 +3,13 @@
 <div id="tests">
 	<% @tests.each do |t| %>
 	  <div class="test">
-	    <%= t.title %>z
+	    <%= t.title %>
 	    <%= link_to "bekijken", usertest_path(t) %>
 	    <%= link_to "bewerken", edit_usertest_path(t) %>
 	    <%= link_to 'Verwijderen', usertest_path(t), method: :delete, data: { confirm: 'Weet je het heul zeker??' } %>
+	    <% if t.status == false %>
+	    	<%= button_to "Publiceren", :method => "update_status" %> <%# , :method => "publish_email" %>
+	    <% end %>
 	  </div>
 	<% end %>
 </div>

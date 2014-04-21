@@ -33,6 +33,18 @@ class UsertestsController < ApplicationController
 		end
 	end
 
+	def update_status
+		@test = Usertest.find(params[:id])
+
+		@test.status = 1
+
+		if @test.save
+			redirect_to @test
+		else
+			render 'new'
+		end
+	end
+
 	def index
 		@tests = Usertest.all()
 	end
@@ -48,7 +60,7 @@ class UsertestsController < ApplicationController
 
 private
   def test_params
-    params.require(:usertest).permit(:title, :introtext, :start_date, :end_date)
+    params.require(:usertest).permit(:title, :introtext, :start_date, :end_date, :status)
   end
 
 
