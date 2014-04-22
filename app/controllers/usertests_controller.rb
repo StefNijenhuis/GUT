@@ -33,6 +33,10 @@ class UsertestsController < ApplicationController
 		end
 	end
 
+	def publish
+		toggle!(:status)
+	end
+
 	def index
 		@tests = Usertest.all()
 	end
