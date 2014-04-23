@@ -19,6 +19,10 @@
 		<%= f.text_area :introtext %>
 
 	<p>
+		<%= f.label :testmethode %>
+		<%= f.collection_select :method_id, Testmethod.all, :id, :name, :prompt => "Selecteer een testmethode" %>
+	</p>
+	<p>
 		<%= f.label :start_date %>
 		<%= f.date_select(:start_date) %>
 	</p>
