@@ -48,7 +48,7 @@ class UsertestsController < ApplicationController
 
 private
   def test_params
-    params.require(:usertest).permit(:title, :introtext, :start_date, :end_date)
+    params.require(:usertest).permit(:title, :introtext, :method_id, :start_date, :end_date)
   end
 
 
