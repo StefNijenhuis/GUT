@@ -1,7 +1,5 @@
 GUT::Application.routes.draw do
 
-  get 'share/sendEmails/:id', to: 'share#index', as: 'shareEmail'
-
   get "users/show"
   post 'share/sendEmails/:id', to: 'share#sendEmails'
 
@@ -9,7 +7,7 @@ GUT::Application.routes.draw do
 
   resources :usertests do
   	member do
-  		put :publish
+  		post :publish
   	end
   end
   
