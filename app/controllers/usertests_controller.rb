@@ -37,6 +37,7 @@ class UsertestsController < ApplicationController
 		toggle!(:status)
 	end
 
+
 	def index
 		@tests = Usertest.all()
 	end
