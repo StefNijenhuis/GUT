@@ -33,6 +33,12 @@ class UsertestsController < ApplicationController
 		end
 	end
 
+	def publish
+		@p = Usertest.find(params[:id])
+  	@p.toggle!(:status)  
+	end
+
+
 	def index
 		@tests = Usertest.all()
 	end
@@ -49,7 +55,7 @@ class UsertestsController < ApplicationController
 
 private
   def test_params
-    params.require(:usertest).permit(:title, :introtext, :method_id, :start_date, :end_date)
+    params.require(:usertest).permit(:title, :introtext, :method_id, :start_date, :end_date, :status)
   end
 
 
