@@ -4,7 +4,7 @@ GUT::Application.routes.draw do
   devise_for :users
   resources :usertests do
   	member do
-  		get :publish
+  		post :publish
   	end
   end
   resources :users
