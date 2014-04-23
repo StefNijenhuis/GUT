@@ -43,6 +43,7 @@ class UsertestsController < ApplicationController
 
 	def show
 		@test = Usertest.find(params[:id])
+		@testmethod = Testmethod.find_by "id = ?", @test.method_id
 	end
 
 
