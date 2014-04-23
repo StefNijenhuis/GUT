@@ -1,4 +1,4 @@
 $(document).ready ->
 
-  $("#publish").click ->
-    $("#publish").hide()
+  $(".publish").click ->
+    $(this).hide()
