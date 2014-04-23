@@ -1,0 +1,23 @@
+<%= simple_form_for @method do |f| %>
+
+	<% if @method.errors.any? %>
+		<div id="error_explanation">
+			<ul>
+				<% @method.errors.full_messages.each do |msg| %>
+				  <li><%= msg %></li>
+				<% end %>
+			</ul>
+		</div>
+	<% end %>
+
+	<p>
+		<%= f.label :naam %><br>
+		<%= f.text_field :name %>
+	</p>
+
+		<%= f.label :beschrijving %>
+		<%= f.text_area :description %>
+	<p>
+	<%= f.submit %>
+	</p>
+<% end %>

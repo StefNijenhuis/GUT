@@ -1,0 +1,8 @@
+<h1><%=  @method.name %> </h1>
+
+<p><%=raw @method.description %> </p>
+
+
+<%= link_to "bewerken", edit_testmethod_path(@method) %>
+
+<%= link_to "Terug naar overzicht", testmethods_path() %>
