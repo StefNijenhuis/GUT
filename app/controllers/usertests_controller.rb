@@ -34,8 +34,8 @@ class UsertestsController < ApplicationController
 	end
 
 	def publish
-		@p = Usertest.find(params[:id])
-  	@p.toggle!(:status)  
+		#@p = Usertest.find(params[:id])
+  	#@p.toggle!(:status)  
 	end
 
 	def index

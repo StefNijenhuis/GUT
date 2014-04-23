@@ -8,9 +8,8 @@
 	    <%= link_to "bewerken", edit_usertest_path(t) %>
 	    <%= link_to 'Verwijderen', usertest_path(t), method: :delete, data: { confirm: 'Weet je het heul zeker??' } %>
 	    <% if t.status == false %>
-	    	<p><%= button_to 'publish', [:publish, t] %></p>
+	    	<p><%= button_to 'Publiceren', [:publish, t] , :remote => true, :id=>'publish' %></p>
 	    <% end %>
-
 	  </div>
 	<% end %>
 </div>
