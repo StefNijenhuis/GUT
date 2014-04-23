@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140419100146) do
+ActiveRecord::Schema.define(version: 20140423084634) do
 
   create_table "testmethods", force: true do |t|
     t.string   "name"
@@ -68,7 +68,7 @@ ActiveRecord::Schema.define(version: 20140419100146) do
     t.integer  "user_id"
     t.string   "title"
     t.text     "introtext"
-    t.integer  "methodid"
+    t.integer  "method_id"
     t.datetime "end_date"
     t.datetime "start_date"
     t.boolean  "status"
