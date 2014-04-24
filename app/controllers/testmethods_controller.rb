@@ -1,4 +1,6 @@
 class TestmethodsController < ApplicationController
+	before_filter :authenticate_user!
+	
 	def new
 		@method = Testmethod.new()
 	end
