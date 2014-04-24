@@ -1,6 +1,7 @@
 class TestmethodsController < ApplicationController
 	before_filter :authenticate_user!
-	
+	before_action :set_method, only: [:show, :edit, :update, :destroy]
+
 	def new
 		@method = Testmethod.new()
 	end
@@ -16,15 +17,11 @@ class TestmethodsController < ApplicationController
 	end
 
 	def destroy
-		@method = Testmethod.find(params[:id])
 		@method.destroy
-
 		redirect_to testmethods_path
 	end
 
 	def update
-		@method = Testmethod.find(params[:id])
- 
 		if @method.update(test_params)
 			redirect_to @method
 		else
@@ -37,15 +34,20 @@ class TestmethodsController < ApplicationController
 	end
 
 	def edit
-		@method = Testmethod.find(params[:id])
+	
 	end
 
 	def show
-		@method = Testmethod.find(params[:id])
+		
 	end
 
 
 private
+
+  def set_method
+    @method = Testmethod.find(params[:id])
+  end
+
   def test_params
     params.require(:testmethod).permit(:name, :description)
   end

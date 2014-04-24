@@ -1,5 +1,6 @@
 class UsertestsController < ApplicationController
 	before_filter :authenticate_user!
+	before_action :set_test, only: [:show, :edit, :update, :destroy, :test]
 
 	def new
 		@test = Usertest.new()
@@ -19,15 +20,11 @@ class UsertestsController < ApplicationController
 	end
 
 	def destroy
-		@test = Usertest.find(params[:id])
 		@test.destroy
-
 		redirect_to usertests_path
 	end
 
 	def update
-		@test = Usertest.find(params[:id])
- 
 		if @test.update(test_params)
 			redirect_to @test
 		else
@@ -46,11 +43,10 @@ class UsertestsController < ApplicationController
 	end
 
 	def edit
-		@test = Usertest.find(params[:id])
+	
 	end
 
 	def show
-		@test = Usertest.find(params[:id])
 		if current_user.id == @test.user_id
 			@testmethod = Testmethod.find_by "id = ?", @test.method_id
 		else
@@ -59,11 +55,15 @@ class UsertestsController < ApplicationController
 	end
 
 	def test
-		@test = Usertest.find(params[:id])
+		
 	end
 
 
 private
+  def set_test
+    @test = Usertest.find(params[:id])
+  end
+
   def test_params
     params.require(:usertest).permit(:title, :introtext, :method_id, :start_date, :end_date, :status)
   end
