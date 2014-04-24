@@ -11,17 +11,9 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140423084634) do
+ActiveRecord::Schema.define(version: 20140424115450) do
 
-  create_table "testmethods", force: true do |t|
-    t.string   "name"
-    t.text     "description"
-    t.string   "icon"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  create_table "testpeople", force: true do |t|
+  create_table "participant", force: true do |t|
     t.string   "age"
     t.string   "name"
     t.string   "email"
@@ -32,6 +24,19 @@ ActiveRecord::Schema.define(version: 20140423084634) do
     t.boolean  "gender"
     t.datetime "start_time"
     t.datetime "end_time"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "participants", force: true do |t|
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "testmethods", force: true do |t|
+    t.string   "name"
+    t.text     "description"
+    t.string   "icon"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
