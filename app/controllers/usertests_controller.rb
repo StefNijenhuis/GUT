@@ -1,4 +1,7 @@
 class UsertestsController < ApplicationController
+	before_filter :authenticate_user!
+	before_action :set_test, only: [:show, :edit, :update, :destroy, :test]
+
 	def new
 		@test = Usertest.new()
 	end
@@ -17,15 +20,16 @@ class UsertestsController < ApplicationController
 	end
 
 	def destroy
-		@test = Usertest.find(params[:id])
-		@test.destroy
-
-		redirect_to usertests_path
+		#only able to delete if user made the test
+		if current_user == @test.user
+		  @test.destroy
+		  redirect_to usertests_path
+		else
+		  redirect_to @test, notice: 'Je kunt deze test niet verwijderen.'
+		end
 	end
 
 	def update
-		@test = Usertest.find(params[:id])
- 
 		if @test.update(test_params)
 			redirect_to @test
 		else
@@ -43,12 +47,21 @@ class UsertestsController < ApplicationController
 	end
 
 	def edit
-		@test = Usertest.find(params[:id])
+	  if current_user != @test.user
+	  	redirect_to @test, notice: 'Je kunt deze test niet bewerken.'
+	  end
 	end
 
 	def show
-		@test = Usertest.find(params[:id])
-		@testmethod = Testmethod.find_by "id = ?", @test.method_id
+		if current_user.id == @test.user_id
+			@testmethod = Testmethod.find_by "id = ?", @test.method_id
+		else
+			redirect_to test_usertest_path
+		end
+	end
+
+	def test
+		
 	end
 
 	def saveParticipantData
@@ -69,6 +82,10 @@ class UsertestsController < ApplicationController
 	end
 
 private
+  def set_test
+    @test = Usertest.find(params[:id])
+  end
+
   def test_params
     params.require(:usertest).permit(:title, :introtext, :method_id, :start_date, :end_date, :status)
   end

@@ -1,5 +1,4 @@
 $ ->
-
 	os = window.navigator.platform
 	browser = "chrome"
 
@@ -14,3 +13,13 @@ $ ->
 	      error:(data) ->
 	        return false
 	    })
+
+browserSize = ->
+	width = $(window).width()
+	height = $(window).height()
+
+	$('#width').html(width)
+	$('#height').html(height)
+	console.log(width)
+	console.log(height)
+browserSize()
