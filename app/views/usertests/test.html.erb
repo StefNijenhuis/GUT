@@ -1,12 +1,8 @@
 <script type="text/javascript">var addthis_config = {"data_track_addressbar":true};</script>
 <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-53579f7224643a4a"></script>
 
-
+<h1>Welkom bij de testpagina</h1>
 <h1><%=  @test.title %> </h1>
-<h2>Testmethode: <%= @testmethod.name %> </h2>
-<h1><%=  @test.start_date.to_formatted_s(:month_and_day_and_year) %> </h1>
-
-<h1><%=  @test.end_date.to_formatted_s(:month_and_day_and_year) %> </h1>
 <%=raw @test.introtext %> 
 
 <div class="addthis_toolbox addthis_default_style ">
@@ -18,7 +14,4 @@
 <a class="addthis_counter addthis_bubble_style"></a>
 </div>
 
-<% if current_user.id == @test.user_id %>
-	<%=	link_to "bewerken", edit_usertest_path(@test) %>
-<% end %>
 <%= link_to "Terug naar overzicht", usertests_path() %>

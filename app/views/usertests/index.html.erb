@@ -5,8 +5,10 @@
 	  <div class="test">
 	    <%= t.title %>
 	    <%= link_to "bekijken", usertest_path(t) %>
-	    <%= link_to "bewerken", edit_usertest_path(t) %>
-	    <%= link_to 'Verwijderen', usertest_path(t), method: :delete, data: { confirm: 'Weet je het heul zeker??' } %>
+	    <% if current_user.id == t.user_id %>
+	    	<%= link_to "bewerken", edit_usertest_path(t) %>
+	    	<%= link_to 'Verwijderen', usertest_path(t), method: :delete, data: { confirm: 'Weet je het heul zeker??' } %>
+	    <% end %>
 	    <% if t.status == false %>
 	    	<p><%= button_to 'Publiceren', [:publish, t] , :remote => true, :id=>'publish', :class => 'publish' %></p>
 	    <% end %>

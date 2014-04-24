@@ -8,6 +8,7 @@ GUT::Application.routes.draw do
   resources :usertests do
   	member do
   		post :publish
+      get :test
   	end
   end
   

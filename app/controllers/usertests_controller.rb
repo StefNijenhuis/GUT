@@ -49,7 +49,15 @@ class UsertestsController < ApplicationController
 
 	def show
 		@test = Usertest.find(params[:id])
-		@testmethod = Testmethod.find_by "id = ?", @test.method_id
+		if current_user.id == @test.user_id
+			@testmethod = Testmethod.find_by "id = ?", @test.method_id
+		else
+			redirect_to test_usertest_path
+		end
+	end
+
+	def test
+		@test = Usertest.find(params[:id])
 	end
 
 
