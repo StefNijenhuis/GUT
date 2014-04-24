@@ -18,7 +18,7 @@
 <a class="addthis_counter addthis_bubble_style"></a>
 </div>
 
-
-<%= link_to "bewerken", edit_usertest_path(@test) %>
-
+<% if current_user.id == @test.user_id %>
+	<%=	link_to "bewerken", edit_usertest_path(@test) %>
+<% end %>
 <%= link_to "Terug naar overzicht", usertests_path() %>
