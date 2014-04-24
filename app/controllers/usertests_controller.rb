@@ -20,8 +20,13 @@ class UsertestsController < ApplicationController
 	end
 
 	def destroy
-		@test.destroy
-		redirect_to usertests_path
+		#only able to delete if user made the test
+		if current_user == @test.user
+		  @test.destroy
+		  redirect_to usertests_path
+		else
+		  redirect_to @test, notice: 'Je kunt deze test niet verwijderen.'
+		end
 	end
 
 	def update
@@ -43,7 +48,9 @@ class UsertestsController < ApplicationController
 	end
 
 	def edit
-	
+	  if current_user != @test.user
+	  	redirect_to @test, notice: 'Je kunt deze test niet bewerken.'
+	  end
 	end
 
 	def show
