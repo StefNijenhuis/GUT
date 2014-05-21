@@ -11,7 +11,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140423084634) do
+ActiveRecord::Schema.define(version: 20140521114253) do
+
+  create_table "association_attachments", force: true do |t|
+    t.integer  "association_test_id"
+    t.string   "image"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "association_tests", force: true do |t|
+    t.string   "title"
+    t.text     "description"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "testmethods", force: true do |t|
     t.string   "name"

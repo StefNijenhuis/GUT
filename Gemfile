@@ -30,6 +30,11 @@ gem 'less-rails'
 gem 'ckeditor'
 gem 'devise'
 
+# carrierwave for image uploading
+gem 'carrierwave'
+# mini magic for image resizing
+gem 'mini_magick', '~> 3.7.0' #only works with imagemagick installed on machine: http://www.imagemagick.org/
+
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
 gem 'turbolinks'
 

@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Association test:</strong>
+  <%= @association_attachment.association_test_id %>
+</p>
+
+<p>
+  <strong>Image:</strong>
+  <%= @association_attachment.image %>
+</p>
+
+<%= link_to 'Edit', edit_association_attachment_path(@association_attachment) %> |
+<%= link_to 'Back', association_attachments_path %>

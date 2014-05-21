@@ -1,0 +1,29 @@
+<h1>Listing association_tests</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Description</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @association_tests.each do |association_test| %>
+      <tr>
+        <td><%= association_test.title %></td>
+        <td><%= association_test.description %></td>
+        <td><%= link_to 'Show', association_test %></td>
+        <td><%= link_to 'Edit', edit_association_test_path(association_test) %></td>
+        <td><%= link_to 'Destroy', association_test, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Association test', new_association_test_path %>
