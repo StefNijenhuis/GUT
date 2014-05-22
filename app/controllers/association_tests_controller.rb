@@ -78,6 +78,6 @@ class AssociationTestsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def association_test_params
-      params.require(:association_test).permit(:title, :description, post_attachments_attributes: [:id, :association_test_id, :image])
+      params.require(:association_test).permit(:title, :description, association_attachments_attributes: [:id, :association_test_id, :image])
     end
 end

@@ -3,6 +3,10 @@
 	<%= @association_test.title %>
 </h1>
 
+<h2>
+	Welk woord associeer je bij de afbeeldingen?
+</h2>
+
 <p>
 	<% @association_attachments.in_groups_of(2).each do |group| %>
 	  <div class="row">
@@ -17,6 +21,4 @@
 	<% end %>
 </p>
 
-<p>
-	Welk woord associeer je bij de afbeeldingen?
-</p>
+<%= link_to 'End test', association_tests_path, data: { confirm: 'Your input won\'t be recorderd, are you sure?' } %>

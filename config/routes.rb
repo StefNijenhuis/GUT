@@ -1,5 +1,7 @@
 GUT::Application.routes.draw do
 
+  get "association_result/new"
+  get "association_result/create"
   resources :association_attachments
   get :maketest, :to => "association_tests#maketest"
   resources :association_tests
