@@ -1,0 +1,16 @@
+.timer{
+    width: 200px;
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    height: 200px;
+}
+
+.step{
+    display: none;
+    position: relative;
+}
+
+.currentStep{
+    display:block;
+}
