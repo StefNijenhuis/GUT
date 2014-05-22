@@ -51,11 +51,9 @@ ActiveRecord::Schema.define(version: 20140521114253) do
   end
 
   create_table "uploads", force: true do |t|
-    t.string   "name"
-    t.string   "path"
-    t.string   "type"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "product"
   end
 
   create_table "users", force: true do |t|
