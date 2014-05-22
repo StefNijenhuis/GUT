@@ -1,5 +1,5 @@
 class AssociationTestsController < ApplicationController
-  before_action :set_association_test, only: [:show, :edit, :update, :destroy]
+  before_action :set_association_test, only: [:maketest, :show, :edit, :update, :destroy]
 
   # GET /associaton_tests
   # GET /association_tests.json
@@ -10,6 +10,10 @@ class AssociationTestsController < ApplicationController
   # GET /association_tests/1
   # GET /association_tests/1.json
   def show
+    @association_attachments = @association_test.association_attachments.all
+  end
+
+  def maketest
     @association_attachments = @association_test.association_attachments.all
   end
 

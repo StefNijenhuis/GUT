@@ -1,6 +1,7 @@
 <p id="notice"><%= notice %></p>
 
 <div id="article">
+	<%= link_to('Make the test', :action => 'maketest', :id => @association_test.id) %>
 	<div id="header">
 		<h1>
 		  <%= @association_test.title %>
