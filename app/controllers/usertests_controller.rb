@@ -71,7 +71,7 @@ private
   end
 
   def test_params
-    params.require(:usertest).permit(:title, :introtext, :methodname, :start_date, :end_date, :status)
+    params.require(:usertest).permit(:title, :introtext, :outrotext, :methodname, :start_date, :end_date, :status)
   end
 
 	def get_methodname 

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140526091321) do
+ActiveRecord::Schema.define(version: 20140526112408) do
 
   create_table "association_attachments", force: true do |t|
     t.integer  "association_test_id"
@@ -78,6 +78,7 @@ ActiveRecord::Schema.define(version: 20140526091321) do
     t.boolean  "status"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.text     "outrotext"
   end
 
 end
