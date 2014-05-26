@@ -12,8 +12,322 @@
  *= require_tree .
  */
 
- *= require bootstrap-datepicker3
+ *
+{
+margin: 0;
+padding: 0;
+box-sizing:border-box;
+-moz-box-sizing:border-box;
+}
 
-body{
-	font-family: "Arial"
+@font-face {
+font-family: 'BariolRegular';
+src: url('/assets//BariolRegular.eot');
+src: local('BariolRegular'), url('/assets/BariolRegular.woff') format('woff'), url('/assets/BariolRegular.ttf') format('truetype');
+}
+
+html
+{
+	width: 100%;
+	height: 100%;
+}
+
+body
+{
+	background-color: #d8d9db ;
+	width: 100%;
+	height: 100%;
+	font-family: "BariolRegular";
+}
+
+
+#header
+{
+	background-color: #242d38;
+	width: 100%;
+	height: 80px;
+	float: left;
+}
+
+.logo
+{
+	background-color: #3792e3;
+	width: 280px;
+	padding: 10px;
+	height: 80px;
+	float: left;
+}
+
+.logo label
+{
+	color: white;
+	text-align: center;
+	font-size: 70px;
+	font-family: "BariolRegular";
+	margin-left: 70px;
+}
+
+.sidebar
+{
+	width: 280px;
+	height: 100%;
+	background-color: #242d38;
+	float: left;
+}
+
+.menu_btn
+{
+	width: 100%;
+	padding: 10px;
+	height: 55px;
+	float: left;
+	color: white;
+	font-size: 16px;
+	text-decoration: none;
+	font-family: "BariolRegular";
+}
+
+.menu_btn.active
+{
+	border-left: 10px solid #2a93dd;
+	background-repeat: no-repeat;
+	background-position: left;
+}
+
+.menu_btn.active i
+{
+	margin-left: 10px;
+}
+
+
+i
+{
+	width: 28px;
+	height: 28px;
+	display: block;
+	background-repeat: no-repeat;
+	float: left;
+	margin-left: 20px;
+}
+
+.dashboard_icon
+{
+	background-image: url('dashboard_icon.png');
+}
+
+.finished_icon
+{
+	background-image: url('Publishedtest-icon.png');
+
+}
+
+.tips_icon
+{
+	background-image: url('Finishedtest-icon.png');
+
+}
+
+.menu a span
+{
+	float: left;
+	margin-left: 10px;
+	display: block;
+}
+
+.userdata
+{
+	float: right;
+	width: 300px;
+	height: 80px;
+	padding: 15px;
+}
+
+.userdata .avatar
+{
+	border-radius: 50%;
+	margin-right: 10px;
+	float: left;
+}
+
+.userinfo 
+{
+	float: left;
+}
+
+.userinfo span
+{
+	float: left;
+}
+
+.userinfo span.name
+{
+	color: white;
+	font-size: 14px;
+}
+
+.userinfo span.editprofile
+{
+	color: white;
+	font-size: 12px;
+}
+
+.btn_create
+{
+	width: 105px;
+	height: 35px;
+	padding: 5px;
+	text-align: center;
+	color: black;
+	background-color: white;
+	float: left;
+	cursor: pointer;
+	margin-bottom: 20px;
+	text-decoration: none;
+}
+
+.content
+{
+	margin: 50px;
+	float: left;
+	min-height: 500px;
+	width: 960px;
+
+}
+
+.content-container
+{
+	background-color: #f6f6f6;
+	width:  78%;
+	height: 100%;
+	float: left;
+	height: 600px;
+}
+
+.content-header
+{
+	height: 80px;
+	width: 100%;
+	padding: 10px;
+	background-color: white;
+}
+
+.content-header h1
+{
+	font-size: 20px;
+	text-transform: uppercase;
+	color: #b0b0b0;
+	float: left;
+}	
+
+.addform
+{
+	padding: 20px;
+}
+
+.addform input[type="text"]
+{
+	height: 35px;
+	border: 1px solid #cdcdcd;
+	font-size: 20px;
+	width: 30%;
+	display: block;
+}
+
+.addform label
+{
+	font-family: "BariolRegular";
+	display: block;
+	text-align: left;
+	font-size: 14px;
+	color: #4a4a4a;
+	margin-bottom: 30px;
+}
+
+.addform textarea
+{
+	border: 1px solid #cdcdcd;
+	display: block;
+	height: 100px;
+}
+
+.content-footer
+{
+	background-color: #242d38;
+	width: 100%;
+	height: 20px;
+	margin-top: 90px;
+}
+
+.content-finished
+{
+	width: 1000px;
+	height: 500px;
+	float: left;
+	margin: 20px;
+}
+
+
+.test h1
+{
+	font-family: "BariolRegular";
+	margin: 20px;
+	font-weight: normal;
+}
+
+.test
+{
+	width: 221px;
+	height: 200px;
+	background-color: #ededed;
+	margin: 20px;
+	display:inline-block;
+}
+
+.test-header
+{
+	width: 100%;
+	height: 81px;
+	float: left;
+	padding: 5px;
+}
+
+.backgroundimage
+{
+	background-image: url('Bitmap.png');
+	width: 100%;
+	height: 86px;
+	background-repeat: no-repeat;
+	background-position: center;
+	float: left;
+}
+
+.backgroundimage h3
+{
+	color: white;
+	padding-top: 40px;
+}
+
+.backgroundimage span
+{
+	color: white;
+	font-size: 25px;
+	font-weight: bold;
+}
+
+.testfooter
+{	
+
+	background-image: url('eye.png');
+	float: left;
+	width: 31px;
+	height: 18px;
+}
+
+.testfooter2
+{	
+	
+	background-image: url('chart.png');
+	float: left;
+	width: 31px;
+	height: 29px;
 }

@@ -1,19 +1,22 @@
-<h1> Overzicht van alle tests</h1>
-
-<div id="tests">
-	<% @tests.each do |t| %>
-	  <div class="test">
-	    <%= t.title %>
-	    <%= link_to "bekijken", usertest_path(t) %>
-	    <% if current_user.id == t.user_id %>
-	    	<%= link_to "bewerken", edit_usertest_path(t) %>
-	    	<%= link_to 'Verwijderen', usertest_path(t), method: :delete, data: { confirm: 'Weet je het heul zeker??' } %>
-	    <% end %>
-	    <% if t.status == false %>
-	    	<p><%= button_to 'Publiceren', [:publish, t] , :remote => true, :id=>'publish', :class => 'publish' %></p>
-	    <% end %>
-	  </div>
+ <div class="content-container">
+ <h1> Testoverzicht </h1>
+ 	<% @tests.each do |t| %>
+		<div class="test">
+			<div class="test-header">
+				<h3><%= t.title %></h3>
+				<%= link_to "bekijken", usertest_path(t) %>
+				<% if current_user.id == t.user_id %>
+		    	<%= link_to "bewerken", edit_usertest_path(t) %>
+		    	<%= link_to 'Verwijderen', usertest_path(t), method: :delete, data: { confirm: 'Weet je het zeker?' } %>
+		    <% end %>
+			</div>
+		</div>    
 	<% end %>
-</div>
 
 <%= link_to "Nieuwe test toevoegen", new_usertest_path, class: "addButton" %>
+</div>
+
+
+
+
+
