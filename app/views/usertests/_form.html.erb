@@ -20,7 +20,7 @@
 
 	<p>
 		<%= f.label :testmethode %>
-		<%= f.collection_select :method_id, Testmethod.all, :id, :name, :prompt => "Selecteer een testmethode" %>
+		<%= f.select :methodname, options_for_select([["Memory test", 1], ["Blur test", 2]]) %>
 	</p>
 	<p>
 		<%= f.label :start_date %>

@@ -1,7 +1,7 @@
 <script type="text/javascript">var addthis_config = {"data_track_addressbar":true};</script>
 <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-53579f7224643a4a"></script>
 
-<% if @testmethod.id === 1 %>
+<% if @test.methodname === 1 %>
 	<div id="test">
 		<div class="step currentStep well" data-step="1">
             <h1>Stap 1</h1>
@@ -35,12 +35,12 @@
             <div class="endButton" data-end="true">Einde test</div>
         </div>  
     </div>
-<% elsif @testmethod.id === 2 %>
+<% elsif @test.methodname === 2 %>
 
 <% end %>
 
 <h1><%=  @test.title %> </h1>
-<h2>Testmethode: <%= @testmethod.name %> </h2>
+<h2>Testmethode: <%= @methodname %> </h2>
 <h1><%=  @test.start_date.to_formatted_s(:month_and_day_and_year) %> </h1>
 
 <h1><%=  @test.end_date.to_formatted_s(:month_and_day_and_year) %> </h1>

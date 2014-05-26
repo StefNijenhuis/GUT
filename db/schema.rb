@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140521114253) do
+ActiveRecord::Schema.define(version: 20140526091321) do
 
   create_table "association_attachments", force: true do |t|
     t.integer  "association_test_id"
@@ -23,14 +23,6 @@ ActiveRecord::Schema.define(version: 20140521114253) do
   create_table "association_tests", force: true do |t|
     t.string   "title"
     t.text     "description"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  create_table "testmethods", force: true do |t|
-    t.string   "name"
-    t.text     "description"
-    t.string   "icon"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -80,7 +72,7 @@ ActiveRecord::Schema.define(version: 20140521114253) do
     t.integer  "user_id"
     t.string   "title"
     t.text     "introtext"
-    t.integer  "method_id"
+    t.integer  "methodname"
     t.datetime "end_date"
     t.datetime "start_date"
     t.boolean  "status"

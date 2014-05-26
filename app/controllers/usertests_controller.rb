@@ -1,6 +1,6 @@
 class UsertestsController < ApplicationController
 	before_filter :authenticate_user!
-	before_action :set_test, only: [:show, :edit, :update, :destroy, :test]
+	before_action :set_test, :get_methodname, only: [:show, :edit, :update, :destroy, :test]
 
 	def new
 		@test = Usertest.new()
@@ -55,7 +55,7 @@ class UsertestsController < ApplicationController
 
 	def show
 		if current_user.id == @test.user_id
-			@testmethod = Testmethod.find_by "id = ?", @test.method_id
+			
 		else
 			redirect_to test_usertest_path
 		end
@@ -65,15 +65,25 @@ class UsertestsController < ApplicationController
 		
 	end
 
-
 private
   def set_test
     @test = Usertest.find(params[:id])
   end
 
   def test_params
-    params.require(:usertest).permit(:title, :introtext, :method_id, :start_date, :end_date, :status)
+    params.require(:usertest).permit(:title, :introtext, :methodname, :start_date, :end_date, :status)
   end
 
+	def get_methodname 
+		if @test.methodname === 1
+			@methodname = "Memory test"
+
+		elsif @test.methodname  === 2
+			@methodname = "Blur test"
+
+		else
+			abort("Oops")
+		end		
+	end
 
 end
