@@ -47,3 +47,29 @@
 	top:1px;
 }
 /* This button was generated using CSSButtonGenerator.com */
+
+.timer{
+    width: 200px;
+    position: absolute;
+    top: 0px;
+    left: 3px;
+    height: 200px;
+}
+
+.step{
+    display:none;
+    position: relative;
+}
+
+.currentStep{
+    display:block;
+}
+
+
+#slider{
+    width:300px;
+}
+
+.container{
+    margin-top:10px;
+}

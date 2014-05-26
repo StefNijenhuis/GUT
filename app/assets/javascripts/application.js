@@ -14,6 +14,5 @@
 //= require turbolinks
 //= require_tree
 //= require jquery_ujs
-//= require ckeditor/init
-//= require ckeditor/override
+//= require vague.js
 

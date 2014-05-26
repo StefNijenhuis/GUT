@@ -1,0 +1,32 @@
+<div id="test">
+
+    <div class="step currentStep well" data-step="1">
+        <h1>Stap 1</h1>
+        <p>Bekijk het volgende plaatje aandachtig, je hebt 10 seconden om te oordelen.</p>
+        <div class="nextButton btn btn-primary btn-lg">Begin met de test</div>
+    </div>
+
+   <div class="step well" data-step="2">
+        <%= image_tag("quest.jpg", :class => "blur") %>
+        <div class="timer" data-timer="10"></div>
+    </div>
+
+    <div class="step well" data-step="3">
+         <h1>Stap 3</h1>
+
+         <form> 
+                <label for="response">Waar denk je dat deze afbeelding voor dient?</label>
+                <textarea class="form-control" rows="3"></textarea>
+
+                <label for="response">Wat herkende je als eerste?</label>
+                <textarea class="form-control" rows="3"></textarea>
+         </form>
+
+         <div class="nextButton btn btn-primary btn-lg">Volgende</div> 
+    </div>
+    
+    <div class="step well" data-step="4">
+        <h1>Stap 4</h1>  
+        <div class="endButton btn btn-lg btn-success" data-end="true">Einde test</div>
+    </div>  
+</div>
