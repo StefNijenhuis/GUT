@@ -75,6 +75,12 @@ body
 	float: left;
 }
 
+.navbar-link{
+	color:#fff;
+	font-size:14px;
+	text-decoration:none;
+}
+
 .menu_btn
 {
 	width: 100%;
@@ -87,7 +93,7 @@ body
 	font-family: "BariolRegular";
 }
 
-.menu_btn.active
+.menu_btn:hover
 {
 	border-left: 10px solid #2a93dd;
 	background-repeat: no-repeat;
@@ -151,6 +157,7 @@ i
 
 .userinfo 
 {
+	color:white;
 	float: left;
 }
 
@@ -197,7 +204,7 @@ i
 .content-container
 {
 	background-color: #f6f6f6;
-	width:  78%;
+	width:  100%;
 	float: left;
 }
 
@@ -331,9 +338,14 @@ i
 
 .testfooter2
 {	
-	
 	background-image: url('chart.png');
 	float: left;
 	width: 31px;
 	height: 29px;
+}
+
+#new_user{
+	margin:0 auto;
+	width:300px;
+	border:1px solid #efefef;
 }

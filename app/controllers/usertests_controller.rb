@@ -1,5 +1,5 @@
 class UsertestsController < ApplicationController
-	before_filter :authenticate_user!
+	before_filter :authenticate_user!, :except => [:show]
 	before_action :set_test, :set_methodname, :get_methodname, only: [:show, :edit, :update, :destroy, :test]
 
 	def new
@@ -54,11 +54,7 @@ class UsertestsController < ApplicationController
 	end
 
 	def show
-		if current_user.id == @test.user_id
-			
-		else
-			redirect_to test_usertest_path
-		end
+
 	end
 
 	def test
