@@ -2,12 +2,12 @@
 <html>
 <head>
   <title>GUT</title>
+  <%= include_gon(:init => true) %>
   <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
-
 <% if notice %>
   <p class="alert alert-success"><%= notice %></p>
 <% end %>
@@ -15,18 +15,47 @@
   <p class="alert alert-danger"><%= alert %></p>
 <% end %>
 
-<p class="navbar-text pull-right">
-<% if user_signed_in? %>
-  Logged in as <strong><%= current_user.email %></strong>.
-  <%= link_to 'Profile', current_user %>
-  <%= link_to 'Edit profile', edit_user_registration_path, :class => 'navbar-link' %> |
-  <%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %>
-<% else %>
-  <%= link_to "Sign up", new_user_registration_path, :class => 'navbar-link'  %> |
-  <%= link_to "Login", new_user_session_path, :class => 'navbar-link'  %>
-<% end %>
+    <div id="header">
+      <div class="logo">
+        <label>GUT</label>
+      </div>
+      <div class="userdata">
+        <div class="userinfo">
+          <% if user_signed_in? %>
+           <%= image_tag avatar_url(current_user, 50), :class => "avatar" %>
+            <span class="name"><%= current_user.email %></span>.
+          <%= link_to 'Profile', current_user %>  
+          <%= link_to 'Profiel bewerken', edit_user_registration_path, :class => 'editprofile' %> |
+          <%= link_to "Uitloggen", destroy_user_session_path, method: :delete, :class => 'editprofile'  %>
+          <% else %>
+            <%= link_to "Registreren", new_user_registration_path, :class => 'navbar-link'  %> |
+            <%= link_to "Inloggen", new_user_session_path, :class => 'navbar-link'  %>
+          <% end %>
+        </div>
+      </div>  
+    </div>
+    
+    <div class="sidebar">
+      <div class="menu">
+        
+        <%= link_to root_path, :class => 'menu_btn' do %>
+            <span><i class="dashboard_icon"></i>Dashboard</span>
+        <% end %>
 
-<%= yield %>
+        <%= link_to usertests_path, :class => 'menu_btn' do %>
+            <span><i class="finished_icon"></i>Gepubliceerde testen</span>
+        <% end %>
+
+        <%= link_to usertests_path, :class => 'menu_btn' do %>
+            <span><i class="tips_icon"></i>Afgeronde testen</span>
+        <% end %>
+
+      </div>
+    </div>
+    
+    <div class="content-container">
+      <%= yield %>
+    </div>
 
 </body>
 </html>

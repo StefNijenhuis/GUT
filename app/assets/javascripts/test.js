@@ -28,23 +28,27 @@ $( document ).ready(function() {
  	function buildUp(){
 
  		count = 1;
+ 		
+ 		if (gon.methodname === 2) {
+ 			console.log("hai");
+			var vague = $('.blur').Vague({
+				intensity:      40,      
+				forceSVGUrl:    false
+			});
 
-		var vague = $('.blur').Vague({
-			intensity:      40,      
-			forceSVGUrl:    false
-		});
+			vague.blur();
 
-		vague.blur();
-
-		vague.animate(
-		  20,
-		  {
-		    duration:10000,
-		    easing: 'linear'
-		  }
-		).done(function(){
-		    //console.log('Animation finished!');
-		});
+			vague.animate(
+			  20,
+			  {
+			    duration:10000,
+			    easing: 'linear'
+			  }
+			).done(function(){
+			    //console.log('Animation finished!');
+			});
+ 		} 
+		
  	}
  	
 	$(".nextButton").click(function() {

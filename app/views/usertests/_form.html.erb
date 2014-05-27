@@ -1,4 +1,4 @@
-<%= simple_form_for @test do |f| %>
+<%= simple_form_for @test, :html=> { class: 'addform' } do |f| %>
 
 	<% if @test.errors.any? %>
 		<div id="error_explanation">

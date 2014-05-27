@@ -1,6 +1,6 @@
 class UsertestsController < ApplicationController
 	before_filter :authenticate_user!
-	before_action :set_test, :get_methodname, only: [:show, :edit, :update, :destroy, :test]
+	before_action :set_test, :set_methodname, :get_methodname, only: [:show, :edit, :update, :destroy, :test]
 
 	def new
 		@test = Usertest.new()
@@ -74,7 +74,14 @@ private
     params.require(:usertest).permit(:title, :introtext, :outrotext, :methodname, :start_date, :end_date, :status)
   end
 
+  def set_methodname
+		gon.push({
+		  :methodname => @test.methodname
+		})
+  end
+
 	def get_methodname 
+
 		if @test.methodname === 1
 			@methodname = "Memory test"
 
