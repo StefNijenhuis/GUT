@@ -30,6 +30,9 @@ gem 'less-rails'
 gem 'ckeditor'
 gem 'devise'
 
+# Gon for passing rails objects to javascript
+gem 'gon'
+
 # carrierwave for image uploading
 gem 'carrierwave'
 # mini magic for image resizing
