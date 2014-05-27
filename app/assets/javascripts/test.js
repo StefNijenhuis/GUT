@@ -1,25 +1,8 @@
-
 $( document ).ready(function() {
 
 	buildUp();
 
 	function startTimer(){
-		var vague = $('.blur').Vague({
-			intensity:      40,      
-			forceSVGUrl:    false
-		});
-
-		vague.blur();
-
-		vague.animate(
-		  20,
-		  {
-		    duration:10000,
-		    easing: 'linear'
-		  }
-		).done(function(){
-		    //console.log('Animation finished!');
-		});
 
 		$(".timer").TimeCircles(
 			{ time: {
@@ -46,6 +29,22 @@ $( document ).ready(function() {
 
  		count = 1;
 
+		var vague = $('.blur').Vague({
+			intensity:      40,      
+			forceSVGUrl:    false
+		});
+
+		vague.blur();
+
+		vague.animate(
+		  20,
+		  {
+		    duration:10000,
+		    easing: 'linear'
+		  }
+		).done(function(){
+		    //console.log('Animation finished!');
+		});
  	}
  	
 	$(".nextButton").click(function() {
