@@ -15,11 +15,11 @@
 		<%= f.text_field :title %>
 	</p>
 	<p>
-		<%= f.label :introtext %>
+		<%= f.label "Inleidende tekst" %>
 		<%= f.text_area :introtext %>
 	</p>
 	<p>
-		<%= f.label :outrotext %>
+		<%= f.label "Afsluitende tekst" %>
 		<%= f.text_area :outrotext %>
 	</p>
 	<p>
@@ -27,11 +27,11 @@
 		<%= f.select :methodname, options_for_select([["Memory test", 1], ["Blur test", 2]]) %>
 	</p>
 	<p>
-		<%= f.label :start_date %>
+		<%= f.label "Begin datum" %>
 		<%= f.date_select(:start_date) %>
 	</p>
 	<p>
-		<%= f.label :end_date %>
+		<%= f.label "Eind datum" %>
 		<%= f.date_select(:end_date) %>
 	</p>
 	<p>

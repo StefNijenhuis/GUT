@@ -1,5 +1,7 @@
- <div class="content-container">
- <h1> Testoverzicht </h1>
+
+<div class="content-header">
+	<h1>User test gegevens</h1>
+</div>
  	<% @tests.each do |t| %>
 		<div class="test">
 			<div class="test-header">
@@ -14,7 +16,6 @@
 	<% end %>
 
 <%= link_to "Nieuwe test toevoegen", new_usertest_path, class: "addButton" %>
-</div>
 
 
 
