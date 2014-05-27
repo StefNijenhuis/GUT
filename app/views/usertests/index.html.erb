@@ -1,13 +1,12 @@
 
-<div class="content-header">
-	<h1>User test gegevens</h1>
-</div>
+<%= link_to "Nieuwe test toevoegen", new_usertest_path, class: "btn_create" %>
  	<% @tests.each do |t| %>
 		<div class="test">
 			<div class="test-header">
 				<h3><%= t.title %></h3>
 				<%= link_to "bekijken", usertest_path(t) %>
 				<% if current_user.id == t.user_id %>
+				<%= link_to "Delen", share_usertest_path(t) %>
 		    	<%= link_to "bewerken", edit_usertest_path(t) %>
 		    	<%= link_to 'Verwijderen', usertest_path(t), method: :delete, data: { confirm: 'Weet je het zeker?' } %>
 		    <% end %>
@@ -15,7 +14,7 @@
 		</div>    
 	<% end %>
 
-<%= link_to "Nieuwe test toevoegen", new_usertest_path, class: "addButton" %>
+
 
 
 

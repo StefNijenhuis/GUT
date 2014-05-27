@@ -23,10 +23,9 @@
         <div class="userinfo">
           <% if user_signed_in? %>
            <%= image_tag avatar_url(current_user, 50), :class => "avatar" %>
-            <span class="name"><%= current_user.email %></span>.
-          <%= link_to 'Profile', current_user %>  
-          <%= link_to 'Profiel bewerken', edit_user_registration_path, :class => 'editprofile' %> |
-          <%= link_to "Uitloggen", destroy_user_session_path, method: :delete, :class => 'editprofile'  %>
+            <span class="name"><%= current_user.email %></span> <br/>
+          <%= link_to 'Profiel', edit_user_registration_path, :class => 'navbar-link' %> |
+          <%= link_to "Uitloggen", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %>
           <% else %>
             <%= link_to "Registreren", new_user_registration_path, :class => 'navbar-link'  %> |
             <%= link_to "Inloggen", new_user_session_path, :class => 'navbar-link'  %>
@@ -47,7 +46,8 @@
               <span><i class="finished_icon"></i>Gepubliceerde testen</span>
           <% end %>
 
-          <%= link_to usertests_path, :class => 'menu_btn' do %>
+
+          <%= link_to usertests_path(:finished => "true"), :class => 'menu_btn' do %>
               <span><i class="tips_icon"></i>Afgeronde testen</span>
           <% end %>
 

@@ -180,16 +180,17 @@ i
 
 .btn_create
 {
-	width: 105px;
-	height: 35px;
-	padding: 5px;
-	text-align: center;
-	color: black;
+	width: 221px;
+	height: 200px;
 	background-color: white;
-	float: left;
+	border:2px dashed #000;
+	margin: 20px;
 	cursor: pointer;
-	margin-bottom: 20px;
+	float:left;
+	padding:10px;
 	text-decoration: none;
+	color:black;
+	text-align: center;
 }
 
 .content
@@ -204,8 +205,9 @@ i
 .content-container
 {
 	background-color: #f6f6f6;
-	width:  100%;
+	width: 78%;
 	float: left;
+	padding:20px;
 }
 
 .content-header
@@ -223,11 +225,6 @@ i
 	color: #b0b0b0;
 	float: left;
 }	
-
-.addform
-{
-	padding: 20px;
-}
 
 .addform input[type="text"]
 {
@@ -344,8 +341,86 @@ i
 	height: 29px;
 }
 
-#new_user{
+.button{
+  width:100px;
+  background:#3399cc;
+  display:block;
+  margin:0 auto;
+  margin-top:1%;
+  padding:10px;
+  text-align:center;
+  text-decoration:none;
+  color:#fff;
+  cursor:pointer;
+  transition:background .3s;
+  -webkit-transition:background .3s;
+}
+
+.button:hover{
+  background:#2288bb;
+}
+
+#login{
+  width:400px;
+  margin:0 auto;
+  margin-top:8px;
+  margin-bottom:2%;
+  transition:opacity 1s;
+  -webkit-transition:opacity 1s;
+}
+
+#triangle{
+  width:0;
+  border-top:12x solid transparent;
+  border-right:12px solid transparent;
+  border-bottom:12px solid #3399cc;
+  border-left:12px solid transparent;
+  margin:0 auto;
+}
+
+#login h1{
+  background:#3399cc;
+  padding:20px 0;
+  font-size:140%;
+  font-weight:300;
+  text-align:center;
+  color:#fff;
+}
+
+.login{
+	width:400px;
 	margin:0 auto;
-	width:300px;
-	border:1px solid #efefef;
+}
+
+.login form{
+  background:#f0f0f0;
+  padding:6% 4%;
+}
+
+.login input[type="email"],input[type="password"]{
+  width:92%;
+  background:#fff;
+  margin-bottom:4%;
+  border:1px solid #ccc;
+  padding:4%;
+  font-family:'Open Sans',sans-serif;
+  font-size:95%;
+  color:#555;
+}
+
+.login input[type="submit"]{
+  width:100%;
+  background:#3399cc;
+  border:0;
+  padding:4%;
+  font-family:'Open Sans',sans-serif;
+  font-size:100%;
+  color:#fff;
+  cursor:pointer;
+  transition:background .3s;
+  -webkit-transition:background .3s;
+}
+
+.login input[type="submit"]:hover{
+  background:#2288bb;
 }

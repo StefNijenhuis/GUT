@@ -13,6 +13,7 @@ GUT::Application.routes.draw do
   	member do
   		post :publish
       get :test
+      get :share
   	end
   end
   

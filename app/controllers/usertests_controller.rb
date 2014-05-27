@@ -10,7 +10,6 @@ class UsertestsController < ApplicationController
 		@test = Usertest.new(test_params)
 		@test.status = 0
 		@test.user = current_user
-		#abort(@test.inspect)
 
 		if @test.save
 			redirect_to @test
@@ -44,7 +43,17 @@ class UsertestsController < ApplicationController
 
 
 	def index
-		@tests = Usertest.all()
+		#@tests = Usertest.all()
+
+		 @tests = Usertest.where(nil) # creates an anonymous scope
+  		 @tests = @tests.finished() if params[:finished].present?
+
+  		 @tests.inspect
+	end
+
+
+	def finished
+		@tests = Usertest.finished()
 	end
 
 	def edit
@@ -53,13 +62,10 @@ class UsertestsController < ApplicationController
 	  end
 	end
 
-	def show
+	def share
 
 	end
 
-	def test
-		
-	end
 
 private
   def set_test
