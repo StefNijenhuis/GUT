@@ -63,7 +63,7 @@ class UsertestsController < ApplicationController
 	end
 
 	def share
-
+		@test = Usertest.find(params[:id])
 	end
 
 
