@@ -13,3 +13,10 @@
 //= require jquery
 //= require jquery_ujs
 //= require turbolinks
+
+// $(document).on('page:load', function() {
+// 	$('.menu_btn').click(function(){
+// 		$('.menu_btn').removeClass("active");
+// 		$(this).addClass("active");
+// 	});
+// });

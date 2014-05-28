@@ -81,7 +81,7 @@ body
 	text-decoration:none;
 }
 
-.menu_btn
+.menu a
 {
 	width: 100%;
 	padding: 10px;
@@ -93,18 +93,17 @@ body
 	font-family: "BariolRegular";
 }
 
-.menu_btn:hover
+.menu a.selected
 {
 	border-left: 10px solid #2a93dd;
 	background-repeat: no-repeat;
 	background-position: left;
 }
 
-.menu_btn.active i
+.menu a.selected i
 {
 	margin-left: 10px;
 }
-
 
 i
 {
@@ -135,9 +134,8 @@ i
 
 .menu a span
 {
-	float: left;
-	margin-left: 10px;
-	display: block;
+margin-left: 10px;
+line-height: 30px;
 }
 
 .userdata

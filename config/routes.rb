@@ -16,7 +16,7 @@ GUT::Application.routes.draw do
       get :share
   	end
   end
-  
+
   resources :users
   resources :testmethods
 

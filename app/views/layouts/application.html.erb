@@ -7,7 +7,7 @@
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
   <%= csrf_meta_tags %>
 </head>
-<body>
+<body data-no-turbolink>
 <% if notice %>
   <p class="alert alert-success"><%= notice %></p>
 <% end %>
@@ -37,17 +37,16 @@
     <% if user_signed_in? %>
       <div class="sidebar">
         <div class="menu">
-          
-          <%= link_to root_path, :class => 'menu_btn' do %>
+        
+          <%= nav_link root_path do %>
               <span><i class="dashboard_icon"></i>Dashboard</span>
           <% end %>
-
-          <%= link_to usertests_path, :class => 'menu_btn' do %>
+    
+          <%= nav_link usertests_path do %>
               <span><i class="finished_icon"></i>Gepubliceerde testen</span>
           <% end %>
 
-
-          <%= link_to usertests_path(:finished => "true"), :class => 'menu_btn' do %>
+          <%= nav_link usertests_path(:finished => "true") do %>
               <span><i class="tips_icon"></i>Afgeronde testen</span>
           <% end %>
 
