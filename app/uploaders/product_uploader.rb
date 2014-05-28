@@ -39,7 +39,7 @@ class ProductUploader < CarrierWave::Uploader::Base
   def convert_to_grayscale
     manipulate! do |img|
       img.colorspace("Gray")
-      img.brightness_contrast("-30x0")
+      img.brightness_contrast("-0x0")
       img = yield(img) if block_given?
       img
     end
