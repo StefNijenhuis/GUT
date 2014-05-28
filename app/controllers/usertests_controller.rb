@@ -90,6 +90,9 @@ private
 		elsif @test.methodname  === 2
 			@methodname = "Blur test"
 
+		elsif @test.methodname  === 3
+			@methodname = "Zwart wit test"
+
 		else
 			abort("Oops")
 		end		
