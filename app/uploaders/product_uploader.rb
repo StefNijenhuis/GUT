@@ -4,7 +4,7 @@ class ProductUploader < CarrierWave::Uploader::Base
 
   # Include RMagick or MiniMagick support:
   # include CarrierWave::RMagick
-  # include CarrierWave::MiniMagick
+  include CarrierWave::MiniMagick
 
   # Choose what kind of storage to use for this uploader:
   storage :file
@@ -26,10 +26,24 @@ class ProductUploader < CarrierWave::Uploader::Base
 
   # Process files as they are uploaded:
   # process :scale => [200, 300]
+  version :gray do
+    process :convert_to_grayscale
+  end
   #
   # def scale(width, height)
   #   # do something
   # end
+
+  process :convert_to_grayscale
+
+  def convert_to_grayscale
+    manipulate! do |img|
+      img.colorspace("Gray")
+      img.brightness_contrast("-30x0")
+      img = yield(img) if block_given?
+      img
+    end
+  end
 
   # Create different versions of your uploaded files:
   # version :thumb do

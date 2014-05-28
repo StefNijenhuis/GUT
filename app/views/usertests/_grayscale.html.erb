@@ -1,0 +1,37 @@
+<%= javascript_include_tag "timeCircles.js" %>
+<%= javascript_include_tag "test.js" %>
+
+<div id="test">
+	
+    <div class="step currentStep well" data-step="1">
+        <h1>Stap 1</h1>
+        <p>Je hebt 10 seconden om de volgende afbeelding in je op te nemen.</p>
+    	<div class="nextButton">Begin met de test</div>
+	</div>
+	<div class="step well" data-step="2">
+        <h1>Stap 2</h1>
+        
+        <%= image_tag @test.product.url(:gray) %>
+        <div class="timer" data-timer="10"></div>
+
+    </div>
+
+    <div class="step well" data-step="3">
+         <h1>Stap 3</h1>
+         <form> 
+                <label for="response">Wat heb je onthouden?</label>
+                <input type="text" name="response[]" placeholder="in woorden">
+                <input type="text" name="response[]" placeholder="in woorden">
+                <input type="text" name="response[]" placeholder="in woorden">
+                <input type="text" name="response[]" placeholder="in woorden">
+                <input type="text" name="response[]" placeholder="in woorden">
+         </form>
+
+         <div class="nextButton btn btn-primary btn-lg">Volgende</div> 
+    </div>
+    
+    <div class="step well" data-step="4">
+        <h1>Stap 4</h1>  
+        <div class="endButton" data-end="true">Einde test</div>
+    </div>  
+</div>
