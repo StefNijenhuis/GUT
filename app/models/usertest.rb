@@ -1,5 +1,6 @@
 class Usertest < ActiveRecord::Base
 
+	mount_uploader :product, ProductUploader
 	belongs_to :user
 	has_many :testmethods
 	

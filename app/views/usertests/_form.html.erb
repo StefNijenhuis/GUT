@@ -27,6 +27,10 @@
 		<%= f.select :methodname, options_for_select([["Memory test", 1], ["Blur test", 2]]) %>
 	</p>
 	<p>
+      <%= f.label :product %><br>
+      <%= f.file_field :product %>
+  	</p>
+	<p>
 		<%= f.label "Begin datum" %>
 		<%= f.date_select(:start_date) %>
 	</p>
