@@ -13,6 +13,7 @@
 //= require jquery
 //= require jquery_ujs
 //= require turbolinks
+//= require RRSSB
 
 // $(document).on('page:load', function() {
 // 	$('.menu_btn').click(function(){

@@ -27,17 +27,7 @@ ActiveRecord::Schema.define(version: 20140528092752) do
     t.datetime "updated_at"
   end
 
-  create_table "testpeople", force: true do |t|
-    t.string   "age"
-    t.string   "name"
-    t.string   "email"
-    t.string   "browser"
-    t.string   "ip"
-    t.string   "os"
-    t.string   "resolution"
-    t.boolean  "gender"
-    t.datetime "start_time"
-    t.datetime "end_time"
+  create_table "participants", force: true do |t|
     t.datetime "created_at"
     t.datetime "updated_at"
   end

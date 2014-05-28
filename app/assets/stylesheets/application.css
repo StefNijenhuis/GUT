@@ -10,6 +10,7 @@
  *
  *= require_self
  *= require_tree .
+ *= require RRSSB/scss/rrssb
  */
 
  *
@@ -234,12 +235,24 @@ line-height: 30px;
 	margin-bottom:10px;
 }
 
+.addform input
+{
+	height: 35px;
+	border: 1px solid #cdcdcd;
+	font-size: 20px;
+	width: 30%;
+	padding:10px;
+	margin-bottom:10px;
+}
+
 .addform label
 {
 	font-family: "BariolRegular";
 	text-align: left;
 	font-size: 14px;
 	color: #4a4a4a;
+	width:200px;
+	display: inline-block;
 }
 
 .addform textarea
@@ -395,7 +408,7 @@ line-height: 30px;
   padding:6% 4%;
 }
 
-.login input[type="email"],input[type="password"]{
+.login input[type="email"], .login input[type="password"]{
   width:92%;
   background:#fff;
   margin-bottom:4%;
@@ -406,11 +419,11 @@ line-height: 30px;
   color:#555;
 }
 
-.login input[type="submit"]{
-  width:100%;
+input[type="submit"]{
+  width:200px;
   background:#3399cc;
   border:0;
-  padding:4%;
+  padding:10px;
   font-family:'Open Sans',sans-serif;
   font-size:100%;
   color:#fff;
