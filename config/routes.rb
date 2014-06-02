@@ -1,9 +1,5 @@
 GUT::Application.routes.draw do
 
-  resources :association_attachments
-
-  resources :association_tests
-
   get "users/show"
   post 'share/sendEmails/:id', to: 'share#sendEmails'
 
@@ -18,7 +14,8 @@ GUT::Application.routes.draw do
   end
 
   resources :users
-  resources :testmethods
+
+  resources :results
 
   root to: "usertests#index"
 end
