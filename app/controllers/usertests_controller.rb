@@ -10,7 +10,7 @@ class UsertestsController < ApplicationController
 		@test = Usertest.new(test_params)
 		@test.status = 0
 		@test.user = current_user
-
+		
 		if @test.save
 			redirect_to @test
 		else
@@ -63,9 +63,8 @@ class UsertestsController < ApplicationController
 	end
 
 	def share
-		@test = Usertest.find(params[:id])	
+		@test = Usertest.find(params[:id])
 	end
-
 
 private
   def set_test
@@ -93,10 +92,8 @@ private
 		elsif @test.methodname  === 3
 			@methodname = "Zwart wit test"
 
-		elsif @test.methodname  === 4
-			@methodname = "Ab test"
 		else
-			abort("Method has not been set check the usertests controller")
+			abort("Oops")
 		end		
 	end
 
