@@ -16,7 +16,6 @@
 //= require turbolinks
 //= require RRSSB
 
-
 /* GON 1= Memory test, 2= Blur test, 3= Grayscale test, 4= ABtest, 5= Glyphtest */
 
 $( document ).ready(function() {

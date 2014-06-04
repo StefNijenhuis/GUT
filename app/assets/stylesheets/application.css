@@ -21,6 +21,9 @@ box-sizing:border-box;
 -moz-box-sizing:border-box;
 }
 
+.h1,h2,h3,h4,h5{
+	line-height:40px;
+}
 @font-face {
 font-family: 'BariolRegular';
 src: url('/assets//BariolRegular.eot');
@@ -442,4 +445,40 @@ input[type="submit"]{
 
 .singleImage{
 	display:block;
+}
+
+.alert{
+	width:100%;
+	height:40px;
+	padding:10px;
+	text-align:center;
+	font-size:16px;
+	background:#d9edf7;
+	color:#000;
+}
+
+.alert .alert-success{
+	background:#dff0d8;
+}
+
+.alert .alert-danger{
+	background:#f2dede;
+}
+
+.login-header{
+	float: left;
+	width: 78%;
+	margin-bottom: 16px;
+	margin-left: 57px;
+}
+
+.copypasterino{
+	padding:10px;
+	height:50px;
+	text-align:center;
+	font-size:16px;
+	color:#000;
+	text-decoration: none;
+	background:#fff;
+	border:1px solid #efefef;
 }
