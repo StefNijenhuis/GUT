@@ -15,6 +15,9 @@
   <p class="alert alert-danger"><%= alert %></p>
 <% end %>
 
+
+    <% if user_signed_in? && !current_page?(usertests_path) %>
+
     <div id="header">
       <div class="logo">
         <label>GUT</label>
@@ -33,6 +36,8 @@
         </div>
       </div>  
     </div>
+
+    <% end %>
     
     <% if user_signed_in? %>
       <div class="sidebar">
@@ -54,9 +59,8 @@
       </div>
     <% end %>
     
-    <div class="content-container">
-      <%= yield %>
-    </div>
+    <%= yield %>
+
 
 </body>
 </html>

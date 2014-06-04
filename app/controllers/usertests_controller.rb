@@ -63,7 +63,7 @@ class UsertestsController < ApplicationController
 	end
 
 	def share
-		@test = Usertest.find(params[:id])
+		@test = Usertest.find(params[:id])	
 	end
 
 
@@ -93,8 +93,10 @@ private
 		elsif @test.methodname  === 3
 			@methodname = "Zwart wit test"
 
+		elsif @test.methodname  === 4
+			@methodname = "Ab test"
 		else
-			abort("Oops")
+			abort("Method has not been set check the usertests controller")
 		end		
 	end
 

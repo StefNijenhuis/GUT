@@ -1,0 +1,38 @@
+<%= javascript_include_tag "abTest.js" %>
+
+<header>
+    <div class="user">
+        <img src="http://placekitten.com/36/36" />
+        <div class="username">
+            Deze test is gemaakt door:
+            <span><%= @test.user.email %></span>
+        </div>
+    </div>
+
+    <h3><%= @test.title %></h3>
+</header>
+
+<div id="timer" data-time="10"></div>
+
+<div id="test">
+    <div class="step" data-step="1">
+        <h2>Stap 1</h2>
+        <%= @test.introtext %>
+        <p>Kies welke je het beste vindt, je hebt 10 seconden om te oordelen</p>
+
+        <%= image_tag("instructions.png") %>
+        <button class="btn nextButton">Begin met test</button>
+    </div>
+
+    <div class="step abtest" data-step="2">
+            <div class="abcontainer">
+                <div class="abChoice" data-ab="1"><img src="img/1.png"></div>
+                <div class="abChoice last" data-ab="2"><img src="img/2.png"></div>
+            </div>
+    </div>
+
+    <div class="step" data-step="3">
+        <h2>Stap 3</h2>
+        <p>Bedankt voor het meedoen.</p>
+    </div>
+</div>
