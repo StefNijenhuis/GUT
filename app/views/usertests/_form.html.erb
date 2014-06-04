@@ -18,18 +18,16 @@
 		<%= f.label "Inleidende tekst" %>
 		<%= f.text_area :introtext %>
 	</p>
+
 	<p>
 		<%= f.label "Afsluitende tekst" %>
 		<%= f.text_area :outrotext %>
 	</p>
 	<p>
 		<%= f.label :testmethode %>
-		<%= f.select :methodname, options_for_select([["Memory test", 1], ["Blur test", 2], ["Zwart wit test", 3],["Abtest", 4] ]) %>
+		<%= f.select :methodname, options_for_select([["Memory test", 1], ["Blur test", 2], ["Zwart wit test", 3],["Abtest", 4], ["Onleesbaar test", 5]], :selected => 1) %>
 	</p>
-	<p>
-      <%= f.label :product %><br>
-      <%= f.file_field :product %>
-  	</p>
+
 	<p>
 		<%= f.label "Begin datum" %>
 		<%= f.date_select(:start_date) %>
@@ -38,6 +36,42 @@
 		<%= f.label "Eind datum" %>
 		<%= f.date_select(:end_date) %>
 	</p>
+
+	<div class="singleImage">
+		<p>
+	      <%= f.label "Afbeelding" %><br>
+	      <%= f.file_field :product %>
+	  	</p>
+  	</div>
+
+	<div class="glyphtest">
+	<h1> Onleesbaarheids test</h1>
+	<p style="margin-bottom:10px; width:500px;">
+	Voor de onleesbaarheids test worden extra velden verwacht, de testpersoon krijgt aan het einde van de test 3 opties voorgelegd, aan de hand van de opties kun je zien waar de gebruiker aan denkt bij het zien van jou design.
+	<br/>
+	</p>
+			<p>
+				<%= f.label "Eerste optie Onleesbaar test" %>
+				<%= f.text_field :glyphoption1 %>
+			</p>
+
+			<p>
+				<%= f.label "Tweede optie Onleesbaar test" %>
+				<%= f.text_field :glyphoption2 %>
+			</p>
+
+			<p>
+				<%= f.label "Derde optie Onleesbaar test" %>
+				<%= f.text_field :glyphoption3 %>
+			</p>
+
+			<p>
+		      <%= f.label :url %><br>
+		      <%= f.text_field :url %>
+		  	</p>
+	</div>
+
+
 	<p>
 	<%= f.submit %>
 	</p>

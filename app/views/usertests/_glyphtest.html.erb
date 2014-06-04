@@ -1,0 +1,66 @@
+<%= include_gon %>
+<%= javascript_include_tag "methods.js" %>
+
+        <header>
+            <div class="user">
+                <div class="username">
+                    Deze test is gemaakt door:
+                    <span><%= @test.user.email %></span>
+                </div>
+            </div>
+
+            <h3><%= @test.title %></h3>
+        </header>
+
+    	<div id="timer" data-time="15"></div>
+
+    	<div id="test">
+    		<div class="step" data-step="1">
+    			<h2>Stap 1</h2>
+
+                <p><%= @test.introtext %></p>
+    			<p>Voor 10 seconden zult u kijken naar het ontwerp voor een website. De teksten zijn onleesbaar gemaakt, dus concentreer u op het ontwerp. Na 10 seconden wordt u gevraagd waar u denkt dat het ontwerp voor bedoeld is.</p>
+
+    			<button class="btn nextButton">Begin met test</button>
+    		</div>
+
+    		<div class="step iframe" data-step="2">
+<iframe src='http://projects.haroldmulder.nl/gut/onleesbaar/convert.php?url=<%= @test.url %>&font=redacted'>
+                </iframe>
+
+    		</div>
+
+    		<div class="step" data-step="3">
+    			<h2>Stap 3</h2>
+                Waar denk je dat deze website voor dient?
+
+    			<fiedlset class="multipleChoice">
+    				<label class="btn">
+    					Keuzemogelijkheid
+    					<input type="radio" name="choice" value="choice1">
+    				</label>
+
+    				<label class="btn">
+    					Keuzemogelijkheid
+    					<input type="radio" name="choice" value="choice2">
+    				</label>
+
+    				<label class="btn">
+    					Keuzemogelijkheid
+    					<input type="radio" name="choice" value="choice3">
+    				</label>
+    			</fiedlset>
+
+                <label>
+                    Waaraan kon je dat herkennen?
+                    <textarea name="q2"></textarea>
+                </label>
+
+                <button class="btn nextButton">Keuze opslaan</button>
+    		</div>
+
+    		<div class="step" data-step="4">
+    			<h2>Stap 4</h2>
+    			<p>Bedankt voor het meedoen.</p>
+    		</div>
+    	</div>

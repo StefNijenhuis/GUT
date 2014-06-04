@@ -1,37 +1,51 @@
-<%= javascript_include_tag "timeCircles.js" %>
-<%= javascript_include_tag "test.js" %>
+<%= include_gon %>
+<%= javascript_include_tag "methods.js" %>
+
+<header>
+    <div class="user">
+        <div class="username">
+            Deze test is gemaakt door:
+            <span><%= @test.user.email %></span>
+        </div>
+    </div>
+
+    <h3><%= @test.title %></h3>
+</header>
+
+<div id="timer" data-time="2"></div>
 
 <div id="test">
-	
-    <div class="step currentStep well" data-step="1">
-        <h1>Stap 1</h1>
-        <p>Je hebt 10 seconden om de volgende afbeelding in je op te nemen.</p>
-    	<div class="nextButton">Begin met de test</div>
-	</div>
-	<div class="step well" data-step="2">
-        <h1>Stap 2</h1>
+     <div class="step" data-step="1">
+        <h2>Stap 1</h2>
+        <p><%= @test.introtext %></p>
+        <p>Er komt in een flits een afbeelding voorbij, probeer zoveel mogelijk te onthouden</p>
 
+        <button class="btn nextButton">Begin met test</button>
+    </div>
+
+    <div class="step" data-step="2">
+        <h2>Stap 2</h2>
         <%= image_tag(@test.product) %>
-        <div class="timer" data-timer="10"></div>
-
     </div>
 
-    <div class="step well" data-step="3">
-         <h1>Stap 3</h1>
-         <form> 
-                <label for="response">Wat heb je onthouden?</label>
-                <input type="text" name="response[]" placeholder="in woorden">
-                <input type="text" name="response[]" placeholder="in woorden">
-                <input type="text" name="response[]" placeholder="in woorden">
-                <input type="text" name="response[]" placeholder="in woorden">
-                <input type="text" name="response[]" placeholder="in woorden">
-         </form>
+    <div class="step" data-step="3">
+        <h2>Stap 3</h2>
+        <label>
+            Wat viel je het als eerst op?
+            <textarea name="q1"></textarea>
+        </label>
 
-         <div class="nextButton btn btn-primary btn-lg">Volgende</div> 
+        <label>
+            Wat heb je onthouden?
+            <textarea name="q2"></textarea>
+        </label>
+
+        <button class="btn nextButton">Opslaan</button>
     </div>
-    
-    <div class="step well" data-step="4">
-        <h1>Stap 4</h1>  
-        <div class="endButton" data-end="true">Einde test</div>
-    </div>  
+
+     <div class="step" data-step="4">
+        <h2>Stap 4</h2>
+        <p><%= @test.outrotext %></p>
+    </div>
+
 </div>

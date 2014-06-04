@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140602092303) do
+ActiveRecord::Schema.define(version: 20140604151320) do
 
   create_table "association_attachments", force: true do |t|
     t.integer  "association_test_id"
@@ -78,6 +78,10 @@ ActiveRecord::Schema.define(version: 20140602092303) do
     t.datetime "updated_at"
     t.text     "outrotext"
     t.string   "product"
+    t.string   "url"
+    t.string   "glyphoption1"
+    t.string   "glyphoption2"
+    t.string   "glyphoption3"
   end
 
 end

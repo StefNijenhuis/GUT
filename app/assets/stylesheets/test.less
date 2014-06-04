@@ -14,20 +14,6 @@
 	src: local('BariolRegular'), url('fonts/BariolRegular.woff') format('woff'), url('fonts/BariolRegular.ttf') format('truetype');
 }
 
-*{
-	margin:0;
-	padding:0;
-	box-sizing:border-box;
-	-moz-box-sizing:border-box;
-	font-family:'BariolRegular';
-}
-html, body{
-	height:100%;
-}
-body{
-	background:@background;
-	padding-top:55px;
-}
 header{
 	position:fixed;
 	left:0;
@@ -120,7 +106,7 @@ header{
 	color:@text;
 
 	.step{
-		margin:30px auto;
+		margin:75px auto 30px auto;
 		width:90%;
 		max-width:800px;
 		min-height:200px;
@@ -232,10 +218,10 @@ header{
 		}
 
 		&.iframe{
+			margin-top:55px;
 			width:100%;
 			max-width:none;
 			height:100%;
-			margin:0;
 			padding:0;
 			border:0;
 			background:@white;

@@ -1,7 +1,6 @@
 <%= include_gon %>
-<%= javascript_include_tag "timeCircles.js" %>
 <%= javascript_include_tag "vague.js" %>
-<%= javascript_include_tag "blurTest.js" %>
+<%= javascript_include_tag "methods.js" %>
 
 <header>
     <div class="user">
@@ -30,7 +29,7 @@
         <%= image_tag(@test.product, :class => "blur") %>
     </div>
 
-    <div class="step" data-step="2">
+    <div class="step" data-step="3">
         <h2>Stap 3</h2>
         <label>
             Wat viel je het als eerst op?
@@ -41,5 +40,13 @@
             Wat heb je onthouden?
             <textarea name="q2"></textarea>
         </label>
+
+        <button class="btn nextButton">Opslaan</button>
     </div>
+
+     <div class="step" data-step="4">
+        <h2>Stap 4</h2>
+        <p><%= @test.outrotext %></p>
+    </div>
+
 </div>

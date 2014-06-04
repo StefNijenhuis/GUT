@@ -12,7 +12,7 @@ class UsertestsController < ApplicationController
 		@test.user = current_user
 		
 		if @test.save
-			redirect_to @test
+			redirect_to usertests_path
 		else
 			render 'new'
 		end
@@ -72,7 +72,7 @@ private
   end
 
   def test_params
-    params.require(:usertest).permit(:title, :introtext, :outrotext, :methodname, :start_date, :end_date, :status, :product)
+    params.require(:usertest).permit(:title, :introtext, :outrotext, :methodname, :start_date, :end_date, :status, :product, :url, :glyphoption1, :glyphoption2, :glyphoption3)
   end
 
   def set_methodname
@@ -91,9 +91,14 @@ private
 
 		elsif @test.methodname  === 3
 			@methodname = "Zwart wit test"
+			
+		elsif @test.methodname  === 4
+			@methodname = "AB test"
 
+		elsif @test.methodname  === 5
+			@methodname = "Onleesbaar test"
 		else
-			abort("Oops")
+			abort("Er is geen methode geselecteerd, check UsertestsController")
 		end		
 	end
 

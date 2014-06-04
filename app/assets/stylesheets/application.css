@@ -435,3 +435,11 @@ input[type="submit"]{
 .login input[type="submit"]:hover{
   background:#2288bb;
 }
+
+.glyphtest{
+	display:none;
+}
+
+.singleImage{
+	display:block;
+}

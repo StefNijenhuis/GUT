@@ -11,13 +11,37 @@
 // about supported directives.
 //
 //= require jquery
+//= require jquery.turbolinks
 //= require jquery_ujs
 //= require turbolinks
 //= require RRSSB
 
-// $(document).on('page:load', function() {
-// 	$('.menu_btn').click(function(){
-// 		$('.menu_btn').removeClass("active");
-// 		$(this).addClass("active");
-// 	});
-// });
+
+/* GON 1= Memory test, 2= Blur test, 3= Grayscale test, 4= ABtest, 5= Glyphtest */
+
+$( document ).ready(function() {
+	/* als de checkbox veranderd */
+	$( "#usertest_methodname" ).change(function() {
+		method = $("#usertest_methodname").val();
+
+		if(method){
+			if(method == 5){
+				$('.glyphtest').show(1000);
+				$('.singleImage').hide();
+			}
+
+			if(method == 1 || method == 2 || method == 3){
+				$('.glyphtest').hide();
+				$('.singleImage').show(1000);
+			}
+
+			if(method == 4){
+				$('.glyphtest').hide();
+				$('.singleImage').hide();
+			}
+
+		}
+	});
+});
+
+

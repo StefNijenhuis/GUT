@@ -34,7 +34,6 @@ class ProductUploader < CarrierWave::Uploader::Base
   #   # do something
   # end
 
-  process :convert_to_grayscale
 
   def convert_to_grayscale
     manipulate! do |img|

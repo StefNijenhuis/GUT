@@ -1,4 +1,8 @@
-$(document).ready ->
+$ ->
+	console.log("DOM is ready")
 
-  $(".publish").click ->
-    $(this).hide()
+	
+	# $("#usertest_methodname").on "change", ->
+	# 	alert('dadsaassa');
+
+

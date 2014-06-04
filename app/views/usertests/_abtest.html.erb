@@ -1,5 +1,5 @@
 <%= include_gon %>
-<%= javascript_include_tag "abTest.js" %>
+<%= javascript_include_tag "methods.js" %>
 
 <header>
     <div class="user">
@@ -32,7 +32,7 @@
     </div>
 
     <div class="step" data-step="3">
-        <h2>Stap 3</h2>
-        <p>Bedankt voor het meedoen.</p>
+        <h2>Einde test</h2>
+        <p><%= @test.outrotext %></p>
     </div>
 </div>

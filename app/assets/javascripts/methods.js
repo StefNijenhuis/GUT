@@ -35,7 +35,7 @@ $(window).load(function(){
 			    easing: 'linear'
 			  }
 			).done(function(){
-			    //console.log('Animation finished!');
+			    
 			});
  		} 
 	}
@@ -110,9 +110,11 @@ $(window).load(function(){
 		cur_step.removeClass('currentStep');
 		next_step.addClass('currentStep');
 
-		if(next_step_nr == 2 && gon.methodname === 4){
+		if(next_step_nr == 2){
 
-			startListening();
+			if(gon.methodname === 4){
+				startListening();
+			}
 
 			setTimeout(function(){
 				nextStep();

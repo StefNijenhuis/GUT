@@ -1,19 +1,4 @@
-
-<% if current_user %>
-	<h1><%=  @test.title %> </h1>
-	<h2>Testmethode: <%= @methodname %> </h2>
-	<h1><%=  @test.start_date.to_formatted_s(:month_and_day_and_year) %> </h1>
-
-	<h1><%=  @test.end_date.to_formatted_s(:month_and_day_and_year) %> </h1>
-
-	<% if current_user.id == @test.user_id %>
-		<%=	link_to "bewerken", edit_usertest_path(@test) %>
-	<% end %>
-
-	<%= link_to "Terug naar overzicht", usertests_path() %>
-
-<% else %>
-
+<% if !current_user %>
 	<% if @test.methodname === 1 %>
 		<%= render 'memory' %>
 	<% elsif @test.methodname === 2 %>
@@ -22,7 +7,8 @@
 	    <%= render 'grayscale' %>
 	<% elsif @test.methodname === 4 %>
 	   <%= render 'abtest' %>
+	<% elsif @test.methodname === 5 %>
+	   <%= render 'glyphtest' %>
 	<% end %>
-
 <% end %>
 
