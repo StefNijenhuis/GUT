@@ -1,4 +1,4 @@
-
+<div class="content-container">
 <% if current_user %>
 	<h1><%=  @test.title %> </h1>
 	<h2>Testmethode: <%= @methodname %> </h2>
@@ -11,6 +11,7 @@
 	<% end %>
 
 	<%= link_to "Terug naar overzicht", usertests_path() %>
+</div>
 <% else %>
 
 	<% if @test.methodname === 1 %>

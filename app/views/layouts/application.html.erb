@@ -16,7 +16,7 @@
 <% end %>
 
 
-    <% if user_signed_in? && !current_page?(usertests_path) %>
+    <% if user_signed_in? %>
 
     <div id="header">
       <div class="logo">
@@ -60,7 +60,6 @@
     <% end %>
     
     <%= yield %>
-
 
 </body>
 </html>
