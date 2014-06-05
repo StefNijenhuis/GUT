@@ -29,7 +29,7 @@ config/secrets.yml
 /public/uploads/
 
 # Ignore database config
-/config/database.yml
+config/database.yml
 
 #ignore schema.rb
 db/schema.rb
