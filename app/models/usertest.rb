@@ -9,4 +9,7 @@ class Usertest < ActiveRecord::Base
     scope :finished, where(['end_date < ?', DateTime.now])
     scope :published, where(['status = ?', true])
 
+   has_many :uploads
+   accepts_nested_attributes_for :uploads
+
 end
