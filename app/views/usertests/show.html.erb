@@ -1,13 +1,13 @@
 <% if !current_user %>
-	<% if @test.methodname === 1 %>
+	<% if @test.method_id === 1 %>
 		<%= render 'memory' %>
-	<% elsif @test.methodname === 2 %>
+	<% elsif @test.method_id === 2 %>
 	    <%= render 'blur' %>
-    <% elsif @test.methodname === 3 %>
+    <% elsif @test.method_id === 3 %>
 	    <%= render 'grayscale' %>
-	<% elsif @test.methodname === 4 %>
+	<% elsif @test.method_id === 4 %>
 	   <%= render 'abtest' %>
-	<% elsif @test.methodname === 5 %>
+	<% elsif @test.method_id === 5 %>
 	   <%= render 'glyphtest' %>
 	<% end %>
 <% end %>

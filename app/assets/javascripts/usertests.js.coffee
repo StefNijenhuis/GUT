@@ -2,7 +2,7 @@ $ ->
 	console.log("DOM is ready")
 
 	
-	# $("#usertest_methodname").on "change", ->
+	# $("#usertest_method_id").on "change", ->
 	# 	alert('dadsaassa');
 
 

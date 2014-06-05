@@ -7,7 +7,7 @@ $(window).load(function(){
 		timer = $('#timer');
 		time = timer.data('time');
 		timeDelay = 2000;
-		if (gon.methodname === 4) {
+		if (gon.method_id === 4) {
 			choice = 0;
 		}
 
@@ -20,7 +20,7 @@ $(window).load(function(){
 
 		$('*[data-step="1"]').addClass('currentStep');
 
-		if (gon.methodname === 2) {
+		if (gon.method_id === 2) {
 			var vague = $('.blur').Vague({
 				intensity:      40,      
 				forceSVGUrl:    false
@@ -70,7 +70,7 @@ $(window).load(function(){
 		});
 	}
 
-	if (gon.methodname === 5){
+	if (gon.method_id === 5){
 		//set height for iFrame
 		iFrameHeight();
 
@@ -100,7 +100,7 @@ $(window).load(function(){
 
 		if(next_step_nr == 2){
 
-			if(gon.methodname === 4){
+			if(gon.method_id === 4){
 				startListening();
 			}
 

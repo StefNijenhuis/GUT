@@ -20,8 +20,8 @@
 
 $( document ).ready(function() {
 	/* als de checkbox veranderd */
-	$( "#usertest_methodname" ).change(function() {
-		method = $("#usertest_methodname").val();
+	$( "#usertest_method_id" ).change(function() {
+		method = $("#usertest_method_id").val();
 
 		if(method){
 			if(method == 5){

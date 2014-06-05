@@ -25,7 +25,13 @@
 	</p>
 	<p>
 		<%= f.label :testmethode %>
-		<%= f.select :methodname, options_for_select([["Memory test", 1], ["Blur test", 2], ["Zwart wit test", 3],["Abtest", 4], ["Onleesbaar test", 5]], :selected => 1) %>
+		<%= f.select :method_id, options_for_select([
+				["Memory test", 1],
+				["Blur test", 2],
+				["Zwart wit test", 3],
+				["Abtest", 4],
+				["Onleesbaar test", 5]
+			],:selected => 1) %>
 	</p>
 
 	<p>

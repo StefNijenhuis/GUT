@@ -1,6 +1,6 @@
 class UsertestsController < ApplicationController
 	before_filter :authenticate_user!, :except => [:show]
-	before_action :set_test, :set_methodname, :get_methodname, only: [:show, :edit, :update, :destroy, :test]
+	before_action :set_test, :set_method_id, :get_methodname, only: [:show, :edit, :update, :destroy, :test]
 
 	def new
 		@test = Usertest.new()
@@ -84,30 +84,30 @@ private
   end
 
   def test_params
-    params.require(:usertest).permit(:title, :introtext, :outrotext, :methodname, :start_date, :end_date, :status, :product, :url, :glyphoption1, :glyphoption2, :glyphoption3, uploads_attributes: [:id, :usertest_id, :photo])
+    params.require(:usertest).permit(:title, :introtext, :outrotext, :method_id, :start_date, :end_date, :status, :product, :url, :glyphoption1, :glyphoption2, :glyphoption3, uploads_attributes: [:id, :usertest_id, :photo])
   end
 
-  def set_methodname
+  def set_method_id
 		gon.push({
-		  :methodname => @test.methodname
+		  :method_id => @test.method_id
 		})
   end
 
 	def get_methodname 
 
-		if @test.methodname === 1
+		if @test.method_id === 1
 			@methodname = "Memory test"
 
-		elsif @test.methodname  === 2
+		elsif @test.method_id  === 2
 			@methodname = "Blur test"
 
-		elsif @test.methodname  === 3
+		elsif @test.method_id  === 3
 			@methodname = "Zwart wit test"
 			
-		elsif @test.methodname  === 4
+		elsif @test.method_id  === 4
 			@methodname = "AB test"
 
-		elsif @test.methodname  === 5
+		elsif @test.method_id  === 5
 			@methodname = "Onleesbaar test"
 		else
 			abort("Er is geen methode geselecteerd, check UsertestsController")
