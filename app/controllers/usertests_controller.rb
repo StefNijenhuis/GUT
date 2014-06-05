@@ -4,6 +4,7 @@ class UsertestsController < ApplicationController
 
 	def new
 		@test = Usertest.new()
+		@upload = @test.uploads.build
 	end
 
 	def create
@@ -12,6 +13,11 @@ class UsertestsController < ApplicationController
 		@test.user = current_user
 		
 		if @test.save
+
+			params[:uploads]['photo'].each do |a|
+				@upload = @test.uploads.create!(:photo => a, :usertest_id => @test.id)
+			end
+
 			redirect_to usertests_path
 		else
 			render 'new'
@@ -72,7 +78,7 @@ private
   end
 
   def test_params
-    params.require(:usertest).permit(:title, :introtext, :outrotext, :methodname, :start_date, :end_date, :status, :product, :url, :glyphoption1, :glyphoption2, :glyphoption3)
+    params.require(:usertest).permit(:title, :introtext, :outrotext, :methodname, :start_date, :end_date, :status, :product, :url, :glyphoption1, :glyphoption2, :glyphoption3, uploads_attributes: [:id, :usertest_id, :photo])
   end
 
   def set_methodname

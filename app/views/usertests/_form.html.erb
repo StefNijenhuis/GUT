@@ -44,6 +44,15 @@
 	  	</p>
   	</div>
 
+  	<div class="multipleImages">
+		<%= f.fields_for :uploads do |p| %>
+			<div class="field">
+				<%= p.label :photo %><br>
+				<%= p.file_field :photo, :multiple => true, name: "uploads[photo][]" %>
+			</div>
+		<% end %>
+  	</div>
+
 	<div class="glyphtest">
 	<h1> Onleesbaarheids test</h1>
 	<p style="margin-bottom:10px; width:500px;">
