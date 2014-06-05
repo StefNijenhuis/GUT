@@ -30,3 +30,6 @@ config/secrets.yml
 
 # Ignore database config
 /config/database.yml
+
+#ignore schema.rb
+db/schema.rb
