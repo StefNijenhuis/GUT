@@ -27,3 +27,6 @@ config/secrets.yml
 
 # Ignore carrierwave uploads
 /public/uploads/
+
+# Ignore database config
+/config/database.yml
