@@ -26,8 +26,9 @@
 
     <div class="step abtest" data-step="2">
             <div class="abcontainer">
-                <div class="abChoice" data-ab="1"><img src="img/1.png"></div>
-                <div class="abChoice last" data-ab="2"><img src="img/2.png"></div>
+                <% @uploads.each_with_index do |p, index| %>
+                  <%= image_tag p.photo_url, :class => "abChoice", :data => {:ab => index} %>
+                <% end %>
             </div>
     </div>
 

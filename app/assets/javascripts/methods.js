@@ -50,10 +50,6 @@ $(window).load(function(){
 
 		$(this).addClass('selected');
 		choice = $(this).data('ab');
-
-		setTimeout(function(){
-			nextStep();
-		}, timeDelay);
 	});
 
 	function startListening(){
@@ -64,20 +60,12 @@ $(window).load(function(){
  			   $(".abChoice").removeClass('selected');
 		       $(".abcontainer").find('[data-ab="1"]').addClass('selected');
 
-		    setTimeout(function(){
-				nextStep();
-			}, timeDelay);
 		    }
 
 		    if (e.keyCode == 39) { 
 		       choice = 2;
  			   $(".abChoice").removeClass('selected');
 		       $(".abcontainer").find('[data-ab="2"]').addClass('selected');
-
-		    setTimeout(function(){
-				nextStep();
-			}, timeDelay);
-
 		    }
 		});
 	}

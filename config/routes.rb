@@ -14,7 +14,7 @@ GUT::Application.routes.draw do
   end
 
   resources :users
-
   resources :results
+  
   root to: "usertests#index"
 end

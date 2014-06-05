@@ -45,6 +45,7 @@
   	</div>
 
   	<div class="multipleImages">
+  		<h2> Selecteer voor een ABtest twee afbeeldingen </h2>
 		<%= f.fields_for :uploads do |p| %>
 			<div class="field">
 				<%= p.label :photo %><br>
@@ -63,17 +64,14 @@
 				<%= f.label "Eerste optie Onleesbaar test" %>
 				<%= f.text_field :glyphoption1 %>
 			</p>
-
 			<p>
 				<%= f.label "Tweede optie Onleesbaar test" %>
 				<%= f.text_field :glyphoption2 %>
 			</p>
-
 			<p>
 				<%= f.label "Derde optie Onleesbaar test" %>
 				<%= f.text_field :glyphoption3 %>
 			</p>
-
 			<p>
 		      <%= f.label :url %><br>
 		      <%= f.text_field :url %>

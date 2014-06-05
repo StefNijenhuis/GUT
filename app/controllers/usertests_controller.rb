@@ -14,14 +14,20 @@ class UsertestsController < ApplicationController
 		
 		if @test.save
 
-			params[:uploads]['photo'].each do |a|
-				@upload = @test.uploads.create!(:photo => a, :usertest_id => @test.id)
+			if params[:uploads]
+				params[:uploads]['photo'].each do |a|
+					@upload = @test.uploads.create!(:photo => a, :usertest_id => @test.id)
+				end
 			end
 
 			redirect_to usertests_path
 		else
 			render 'new'
 		end
+	end
+
+	def show
+		@uploads = @test.uploads.all
 	end
 
 	def destroy
