@@ -13,24 +13,8 @@
 
 ActiveRecord::Schema.define(version: 20140605072951) do
 
-  create_table "association_attachments", force: true do |t|
-    t.integer  "association_test_id"
-    t.string   "image"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  create_table "association_tests", force: true do |t|
-    t.string   "title"
-    t.text     "description"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  create_table "participants", force: true do |t|
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
 
   create_table "results", force: true do |t|
     t.integer  "usertestid"
@@ -40,7 +24,17 @@ ActiveRecord::Schema.define(version: 20140605072951) do
     t.datetime "updated_at"
   end
 
-  create_table "uploads", force: true do |t|
+  create_table "testpeople", force: true do |t|
+    t.string   "age"
+    t.string   "name"
+    t.string   "email"
+    t.string   "browser"
+    t.string   "ip"
+    t.string   "os"
+    t.string   "resolution"
+    t.boolean  "gender"
+    t.datetime "start_time"
+    t.datetime "end_time"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "usertest_id"
@@ -64,8 +58,8 @@ ActiveRecord::Schema.define(version: 20140605072951) do
     t.string   "last_sign_in_ip"
   end
 
-  add_index "users", ["email"], name: "index_users_on_email", unique: true
-  add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
+  add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
+  add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
 
   create_table "usertests", force: true do |t|
     t.integer  "user_id"
