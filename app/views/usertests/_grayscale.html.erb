@@ -3,7 +3,6 @@
 
 <header>
     <div class="user">
-        <img src="http://placekitten.com/36/36" />
         <div class="username">
             Deze test is gemaakt door:
             <span><%= @test.user.email %></span>
@@ -33,9 +32,13 @@
 
     <div class="step" data-step="3">
         <h2>Stap 3</h2>
-        <label for="response">Wat heb je onthouden?</label>
-        <input type="text" name="response[]" placeholder="in woorden">
-        <div class="nextButton">Bevestigen</div>
+        
+         <label>
+            Waar denk je dat deze afbeelding voor dient?
+            <textarea name="q2"></textarea>
+        </label>
+
+        <button class="btn nextButton">Opslaan</button>
     </div>
 
     <div class="step well" data-step="4">

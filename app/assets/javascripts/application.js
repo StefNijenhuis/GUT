@@ -27,16 +27,19 @@ $( document ).ready(function() {
 			if(method == 5){
 				$('.glyphtest').show(1000);
 				$('.singleImage').hide();
+				$('.multipleImages').hide();
 			}
 
 			if(method == 1 || method == 2 || method == 3){
 				$('.glyphtest').hide();
+				$('.multipleImages').hide();
 				$('.singleImage').show(1000);
 			}
 
 			if(method == 4){
 				$('.glyphtest').hide();
 				$('.singleImage').hide();
+				$('.multipleImages').show(1000);
 			}
 
 		}

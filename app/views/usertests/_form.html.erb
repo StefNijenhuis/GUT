@@ -51,17 +51,17 @@
   	</div>
 
   	<div class="multipleImages">
-  		<h2> Selecteer voor een ABtest twee afbeeldingen </h2>
+  		<h3> Selecteer voor een abtest twee afbeeldingen</h3>
 		<%= f.fields_for :uploads do |p| %>
 			<div class="field">
-				<%= p.label :photo %><br>
+				<%= p.label "Afbeeldingen" %><br>
 				<%= p.file_field :photo, :multiple => true, name: "uploads[photo][]" %>
 			</div>
 		<% end %>
   	</div>
 
 	<div class="glyphtest">
-	<h1> Onleesbaarheids test</h1>
+	<h3> Onleesbaarheids test</h3>
 	<p style="margin-bottom:10px; width:500px;">
 	Voor de onleesbaarheids test worden extra velden verwacht, de testpersoon krijgt aan het einde van de test 3 opties voorgelegd, aan de hand van de opties kun je zien waar de gebruiker aan denkt bij het zien van jou design.
 	<br/>
@@ -79,7 +79,7 @@
 				<%= f.text_field :glyphoption3 %>
 			</p>
 			<p>
-		      <%= f.label :url %><br>
+		      <%= f.label "Link naar de website, zonder http://" %><br>
 		      <%= f.text_field :url %>
 		  	</p>
 	</div>
