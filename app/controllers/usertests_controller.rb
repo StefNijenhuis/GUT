@@ -1,6 +1,6 @@
 class UsertestsController < ApplicationController
 	before_filter :authenticate_user!, :except => [:show]
-	before_action :set_test, :set_method_id, :get_methodname, only: [:show, :edit, :update, :destroy, :test]
+	before_action :set_test, :set_method_id, :set_usertest_id, :get_methodname, only: [:show, :edit, :update, :destroy, :test]
 
 	def new
 		@test = Usertest.new()
@@ -90,6 +90,12 @@ private
   def set_method_id
 		gon.push({
 		  :method_id => @test.method_id
+		})
+  end
+
+  def set_usertest_id
+		gon.push({
+		  :usertest_id => @test.id
 		})
   end
 

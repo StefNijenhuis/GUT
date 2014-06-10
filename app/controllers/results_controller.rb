@@ -1,5 +1,7 @@
 class ResultsController < ApplicationController
-	
+	 before_action :authenticate_user!
+	 
+
 	def new
 		@result = Result.new()
 	end

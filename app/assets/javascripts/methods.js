@@ -7,6 +7,9 @@ $(window).load(function(){
 		timer = $('#timer');
 		time = timer.data('time');
 		timeDelay = 2000;
+		data = {};
+		var ip;
+
 		if (gon.method_id === 4) {
 			choice = 0;
 		}
@@ -119,5 +122,50 @@ $(window).load(function(){
 			
 		}
 	}
+
+	$.ajax({
+		dataType: "json",
+		url: "http://jsonip.appspot.com?callback=?",
+		async : false,
+		success: function(data){
+			ip = data.ip;
+
+			buildUpData(ip);
+		}
+	});	
+
+	height 	= screen.height; 
+	width 	= screen.width;
+
+	var browser, sUsrAg = navigator.userAgent;
+
+	if(sUsrAg.indexOf("Chrome") > -1) {
+	    browser = "Google Chrome";
+	} else if (sUsrAg.indexOf("Safari") > -1) {
+	    browser = "Apple Safari";
+	} else if (sUsrAg.indexOf("Opera") > -1) {
+	    browser = "Opera";
+	} else if (sUsrAg.indexOf("Firefox") > -1) {
+	    browser = "Mozilla Firefox";
+	} else if (sUsrAg.indexOf("MSIE") > -1) {
+	    browser = "Microsoft Internet Explorer";
+	}
+
+	function buildUpData(ip){
+		data = {
+			'os'			: browser,
+			'width'			: width,
+			'height'		: height,
+			'ip' 			: ip,
+			'usertest_id' 	: gon.usertest_id 
+		};	
+
+		$.ajax({
+			type: "POST",
+			url: "/testpeople",
+			data: { testperson_params: data }
+		});
+	}
+
 
 });
