@@ -160,11 +160,11 @@ $(window).load(function(){
 			'usertest_id' 	: gon.usertest_id 
 		};	
 
-		$.ajax({
-			type: "POST",
-			url: "/testpeople",
-			data: { testperson_params: data }
-		});
+		// $.ajax({
+		// 	type: "POST",
+		// 	url: "/testpeople",
+		// 	data: { testperson_params: data }
+		// });
 	}
 
 

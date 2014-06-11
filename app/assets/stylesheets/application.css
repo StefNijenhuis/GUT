@@ -422,7 +422,7 @@ line-height: 30px;
 }
 
 input[type="submit"]{
-  width:200px;
+  width:auto;
   background:#3399cc;
   border:0;
   padding:10px;

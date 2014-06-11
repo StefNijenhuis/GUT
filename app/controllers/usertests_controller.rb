@@ -32,7 +32,7 @@ class UsertestsController < ApplicationController
 		if !current_user
 
 			if cookies.permanent.signed[:test_done] == params[:id]
-				render 'testdone'
+				# render 'testdone'
 			else
 				cookies.permanent.signed[:test_done] = params[:id]
 			end
@@ -41,6 +41,7 @@ class UsertestsController < ApplicationController
 
 	def show
 		@uploads = @test.uploads.all
+		session[:usertest_id]= params[:id]
 	end
 
 	def destroy
@@ -105,6 +106,14 @@ private
 		  :method_id => @test.method_id
 		})
   end
+
+
+  def set_usertest_id
+ 		gon.push({
+ 		  :usertest_id => @test.id
+ 		})
+	end
+ 
 
 	def get_methodname 
 

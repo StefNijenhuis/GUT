@@ -1,15 +1,24 @@
 class ResultsController < ApplicationController
-	 before_action :authenticate_user!
-	 
 
 	def new
 		@result = Result.new()
 	end
 
 	def create
-    abort("Derp")
-    @usertest = Usertest.find(params[:usertestid])
-    Result.create!( :testpersonid => current_testuser.id, :usertest_id => params[:id], :result => "hai")
-    redirect_to @usertest 
+		
+		@testperson = Testperson.new()
+		
+		if @testperson.save
+		    @result = Result.create :testperson_id => Testperson.last.id, :usertest_id => session[:usertest_id], :result => {"q1" => params[:result][:q1], "q2" => params[:result][:q2]}
+
+		    if @result.save
+		    	render "thankspage"
+		    end
+		end
 	end
+	
+	private
+		def result_params
+    		params.require(:result).permit(:q1, :q2)
+  		end
 end
