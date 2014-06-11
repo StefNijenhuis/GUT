@@ -6,6 +6,7 @@ class ResultsController < ApplicationController
 
 	def create
 		
+		@test = Usertest.find(session[:usertest_id])
 		@testperson = Testperson.new()
 		
 		if @testperson.save
