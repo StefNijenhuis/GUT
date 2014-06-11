@@ -2,6 +2,7 @@ class UsertestsController < ApplicationController
 	before_filter :authenticate_user!, :except => [:show]
 	before_action :set_test, :set_method_id, :get_methodname, only: [:show, :edit, :update, :destroy, :test]
 
+
 	def new
 		@test = Usertest.new()
 		@upload = @test.uploads.build
