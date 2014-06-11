@@ -3,6 +3,7 @@ class UsertestsController < ApplicationController
 	before_filter :check_cookie, :only => [:show]
 	before_action :set_test, :set_method_id, :set_usertest_id, :get_methodname, only: [:show, :edit, :update, :destroy, :test]
 
+
 	def new
 		@test = Usertest.new()
 		@upload = @test.uploads.build
