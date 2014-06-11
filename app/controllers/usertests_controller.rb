@@ -1,6 +1,7 @@
 class UsertestsController < ApplicationController
-	before_filter :authenticate_user!, :except => [:show]
-	before_action :set_test, :set_method_id, :get_methodname, only: [:show, :edit, :update, :destroy, :test]
+	before_filter :authenticate_user!, :except => [:show, :check_cookie]
+	before_filter :check_cookie, :only => [:show]
+	before_action :set_test, :set_method_id, :set_usertest_id, :get_methodname, only: [:show, :edit, :update, :destroy, :test]
 
 
 	def new
@@ -24,6 +25,17 @@ class UsertestsController < ApplicationController
 			redirect_to usertests_path
 		else
 			render 'new'
+		end
+	end
+
+	def check_cookie
+		if !current_user
+
+			if cookies.permanent.signed[:test_done] == params[:id]
+				render 'testdone'
+			else
+				cookies.permanent.signed[:test_done] = params[:id]
+			end
 		end
 	end
 
