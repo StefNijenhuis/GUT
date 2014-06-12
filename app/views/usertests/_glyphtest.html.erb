@@ -38,20 +38,30 @@
                     <%= f.label "Waar denk je dat deze website voor dient?" %>
                     <%= field_set_tag "glyphoptions", :class => "multipleChoice" do %>
                         
-                        <%= f.label @test.glyphoption1, :class => "btn" do %>
+                        <%= @test.glyphoption1 %>
+                        <%= f.radio_button :glyphoption, @test.glyphoption1 %>
+
+                        <%= @test.glyphoption2 %>
+                        <%= f.radio_button :glyphoption, @test.glyphoption2 %>
+
+                        <%= @test.glyphoption3 %>
+                        <%= f.radio_button :glyphoption, @test.glyphoption3 %>
+
+
+<!--                         <%= f.label @test.glyphoption1, :class => "btn" do %>
                             <%= @test.glyphoption1 %>
-                            <%= radio_button_tag("result", @test.glyphoption1)%>
+                            <%= f.radio_button :glyphoption, @test.glyphoption1 %>
                         <% end %>
 
                         <%= f.label @test.glyphoption2, :class => "btn" do %>
                             <%= @test.glyphoption2 %>
-                            <%= radio_button_tag("result", @test.glyphoption2)%>
+                            <%= f.radio_button :glyphoption, @test.glyphoption2 %>
                         <% end %>
 
                         <%= f.label @test.glyphoption3, :class => "btn" do %>
                             <%= @test.glyphoption3 %>
-                            <%= radio_button_tag("result", @test.glyphoption3)%>
-                        <% end %>
+                            <%= f.radio_button :glyphoption, @test.glyphoption3 %>
+                        <% end %> -->
                         
                     <% end %>
 
@@ -63,8 +73,4 @@
 
     		</div>
 
-    		<div class="step" data-step="4">
-    			<h2>Stap 4</h2>
-    			<p>Bedankt voor het meedoen.</p>
-    		</div>
     	</div>

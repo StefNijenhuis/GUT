@@ -70,4 +70,4 @@ gem "letter_opener", :group => :development
 # gem 'capistrano', group: :development
 
 # Use debugger
-# gem 'debugger', group: [:development, :test]
+gem 'debugger', group: [:development, :test]
