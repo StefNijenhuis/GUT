@@ -12,24 +12,38 @@
 	<% end %>
 <% else %>
 
-<h1> Resultaten </h1>
+<table dir="ltr" width="500" border="1" summary="purpose/structure for speech output">
+	<caption>Resultaten van de <% @test.title %></caption>
+	<thead>
+		<tr>
+			<td>Nummer</td>
+			<td>Gedaan op</td>
+			<td>Browser</td>
+			<td>IP</td>
+			<td>Resolutie</td>
+		</tr>
+	</thead>
+	<tbody>
+		 <% @results.each do |r| %>
+			
+			<% if r.testperson %>
+				<tr>
+					<td><%= r.testperson.id %></td>
+				<td><%= r.testperson.created_at.strftime("Test gedaan op  %m/%d/%Y om %I:%M%p") %></td>
+				 	<td><%= r.testperson.browser %></td>
+					<td><%= r.testperson.ip %></td>
+				 	<td><%= r.testperson.width %> x <%= r.testperson.height %>
+					 		<%= r.result["q1"] %>
+							<%= r.result["q2"] %>
+					</td>
+				</tr>
+			<% end %>
+		 <% end %>
+	</tbody>
+</table>
 
 
- <% @results.each do |r| %>
-	
-	<% if r.testperson %>
-		<%= r.testperson.id %>
-	 	<%= r.testperson.created_at %>
-	 	<%= r.testperson.browser %>
-	 	<%= r.testperson.os %>
-	 	<%= r.testperson.ip %>
-	 	<%= r.testperson.width %>
-	 	<%= r.testperson.height %>
-	<% end %>
-	
-	<%= r.result["q1"] %>
-	<%= r.result["q2"] %>
- <% end %>
+
 
 <% end %>
 

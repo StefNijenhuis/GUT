@@ -4,7 +4,6 @@ $(window).load(function(){
 
 
 	buildUp();
-	sendData();
 
 	function buildUp(){
 		timer = $('#timer');
@@ -136,47 +135,51 @@ $(window).load(function(){
 			}
 		});	
 
-		// get resolution
-		height 	= screen.height; 
-		width 	= screen.width;
-
-		// get browser
-		var browser, sUsrAg = navigator.userAgent;
-
-		if(sUsrAg.indexOf("Chrome") > -1) {
-		    browser = "Google Chrome";
-		} else if (sUsrAg.indexOf("Safari") > -1) {
-		    browser = "Apple Safari";
-		} else if (sUsrAg.indexOf("Opera") > -1) {
-		    browser = "Opera";
-		} else if (sUsrAg.indexOf("Firefox") > -1) {
-		    browser = "Mozilla Firefox";
-		} else if (sUsrAg.indexOf("MSIE") > -1) {
-		    browser = "Microsoft Internet Explorer";
-		}
-
 		// prepare data for ajax post
 		function buildUpData(ip){
+
+			// get resolution
+			height 	= screen.height; 
+			width 	= screen.width;
+
+			// get browser
+			var browser, sUsrAg = navigator.userAgent;
+
+			if(sUsrAg.indexOf("Chrome") > -1) {
+			    browser = "Google Chrome";
+			} else if (sUsrAg.indexOf("Safari") > -1) {
+			    browser = "Apple Safari";
+			} else if (sUsrAg.indexOf("Opera") > -1) {
+			    browser = "Opera";
+			} else if (sUsrAg.indexOf("Firefox") > -1) {
+			    browser = "Mozilla Firefox";
+			} else if (sUsrAg.indexOf("MSIE") > -1) {
+			    browser = "Microsoft Internet Explorer";
+			}
+
+
 			data = {
 				'browser'		: browser,
 				'width'			: width,
 				'height'		: height,
 				'ip' 			: ip,
 				'usertest_id' 	: gon.usertest_id
-			};	
+			};
 
 		//post the data
+		console.log(data);
+		
 			$.ajax({
 				type: "POST",
 				url: "/testpeople",
 				data: { testperson_params: data },
 				success: function(response) {
-
-					alert(response.id);
 					$('#result_testperson_id').val(response.id);
 				}
 			});				
 		}
 	}
+
+	sendData();
 
 });
