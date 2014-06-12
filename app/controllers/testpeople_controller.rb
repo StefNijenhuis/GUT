@@ -1,7 +1,8 @@
 class TestpeopleController < ApplicationController
 
 	def create
-		@testperson = Testperson.new(testperson_params)
+
+		@testperson = Testperson.create(testperson_params)
 		
 		if @testperson.save
 			 respond_to do |format|
@@ -12,6 +13,6 @@ class TestpeopleController < ApplicationController
 
 	private
 	  def testperson_params
-	    params.require(:testperson_params).permit(:os, :ip, :start_date, :end_date, :usertest_id, :width, :height)
+	    params.require(:testperson_params).permit(:os, :ip, :start_date, :end_date, :usertest_id, :width, :height, :id)
 	  end
 end
