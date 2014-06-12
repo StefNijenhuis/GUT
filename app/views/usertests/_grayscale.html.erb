@@ -12,7 +12,7 @@
     <h3><%= @test.title %></h3>
 </header>
 
-<div id="timer" data-time="10"></div>
+<div id="timer" data-time="1"></div>
 
 <div id="test">
 	
@@ -33,16 +33,14 @@
     <div class="step" data-step="3">
         <h2>Stap 3</h2>
         
-         <label>
-            Waar denk je dat deze afbeelding voor dient?
-            <textarea name="q2"></textarea>
-        </label>
+        <%= simple_form_for :result, :url => {:action => :create, :controller => "results"} do |f| %>
+            
+            <%= f.label "Waar denk je dat deze afbeelding voor dient?" %>
+            <%= f.text_area :q1 %>
 
-        <button class="btn nextButton">Opslaan</button>
+            <%= f.submit "Opslaan" %>
+        <% end %> 
+
     </div>
-
-    <div class="step well" data-step="4">
-        <h1>Stap 4</h1>  
-        <div class="endButton" data-end="true">Einde test</div>
-    </div>  
+ 
 </div>

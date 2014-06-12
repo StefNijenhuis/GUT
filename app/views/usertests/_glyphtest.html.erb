@@ -12,7 +12,7 @@
             <h3><%= @test.title %></h3>
         </header>
 
-    	<div id="timer" data-time="15"></div>
+    	<div id="timer" data-time="1"></div>
 
     	<div id="test">
     		<div class="step" data-step="1">
@@ -32,31 +32,35 @@
 
     		<div class="step" data-step="3">
     			<h2>Stap 3</h2>
-                Waar denk je dat deze website voor dient?
 
-    			<fiedlset class="multipleChoice">
-    				<label class="btn">
-    					<%= @test.glyphoption1 %>
-    					<input type="radio" name="choice" value="<%= @test.glyphoption1 %>">
-    				</label>
+                <%= simple_form_for :result, :url => {:action => :create, :controller => "results"} do |f| %>
+                    
+                    <%= f.label "Waar denk je dat deze website voor dient?" %>
+                    <%= field_set_tag "glyphoptions", :class => "multipleChoice" do %>
+                        
+                        <%= f.label @test.glyphoption1, :class => "btn" do %>
+                            <%= @test.glyphoption1 %>
+                            <%= radio_button_tag("result", @test.glyphoption1)%>
+                        <% end %>
 
-    				<label class="btn">
-    					<%= @test.glyphoption2 %>
-    					<input type="radio" name="choice" value="<%= @test.glyphoption2 %>">
-    				</label>
+                        <%= f.label @test.glyphoption2, :class => "btn" do %>
+                            <%= @test.glyphoption2 %>
+                            <%= radio_button_tag("result", @test.glyphoption2)%>
+                        <% end %>
 
-    				<label class="btn">
-    					<%= @test.glyphoption3 %>
-    					<input type="radio" name="choice" value="<%= @test.glyphoption3 %>">
-    				</label>
-    			</fiedlset>
+                        <%= f.label @test.glyphoption3, :class => "btn" do %>
+                            <%= @test.glyphoption3 %>
+                            <%= radio_button_tag("result", @test.glyphoption3)%>
+                        <% end %>
+                        
+                    <% end %>
 
-                <label>
-                    Waaraan kon je dat herkennen?
-                    <textarea name="q2"></textarea>
-                </label>
+                    <%= f.label "Waaraan kon je dat herkennen?" %>
+                    <%= f.text_area :q1 %>
 
-                <button class="btn nextButton">Keuze opslaan</button>
+                    <%= f.submit "Opslaan" %>
+                <% end %> 
+
     		</div>
 
     		<div class="step" data-step="4">

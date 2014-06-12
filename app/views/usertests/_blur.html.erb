@@ -39,16 +39,12 @@
 
             <%= f.label "Wat heb je onthouden?" %>
             <%= f.text_area :q2 %>
-                
+ 
             <%= f.input :testperson_id, :as => :hidden, :input_html => { :value => "" } %>
-            <%= f.submit "Opslaan", :class => "btn nextButton" %>
+            <%= f.submit "Opslaan" %>
+
         <% end %> 
 
-    </div>
-
-     <div class="step" data-step="4">
-        <h2>Stap 4</h2>
-        <p><%= @test.outrotext %></p>
     </div>
 
 </div>

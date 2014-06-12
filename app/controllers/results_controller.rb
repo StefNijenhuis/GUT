@@ -18,4 +18,4 @@ class ResultsController < ApplicationController
 		def result_params
     		params.require(:result).permit(:q1, :q2, :testperson_id)
   		end
-end
+end 
