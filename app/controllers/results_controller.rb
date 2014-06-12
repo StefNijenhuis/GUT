@@ -8,10 +8,11 @@ class ResultsController < ApplicationController
 		
 		@test = Usertest.find(session[:usertest_id])
 		@testperson = Testperson.new()
-		
-		if @testperson.save
-		    @result = Result.create :testperson_id => Testperson.last.id, :usertest_id => session[:usertest_id], :result => {"q1" => params[:result][:q1], "q2" => params[:result][:q2]}
-
+		# abort(params[:result])
+		# debugger
+		if @testperson.save 
+		    @result = Result.create :testperson_id => Testperson.last.id, :usertest_id => session[:usertest_id], :result => {"q1" => params[:result][:q1], "q2" => params[:result][:q2], "glyphoptions" => params[:result][:glyphoption]}
+		    
 		    if @result.save
 		    	render "thankspage"
 		    end
@@ -20,6 +21,6 @@ class ResultsController < ApplicationController
 	
 	private
 		def result_params
-    		params.require(:result).permit(:q1, :q2)
+    		params.require(:result).permit(:q1, :q2, :glyphoption)
   		end
 end 
