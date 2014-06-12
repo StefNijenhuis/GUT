@@ -3,7 +3,6 @@ class UsertestsController < ApplicationController
 	before_filter :check_cookie, :only => [:show]
 	before_action :set_test, :set_method_id, :set_usertest_id, :get_methodname, only: [:show, :edit, :update, :destroy, :test]
 
-
 	def new
 		@test = Usertest.new()
 		@upload = @test.uploads.build
@@ -40,8 +39,11 @@ class UsertestsController < ApplicationController
 	end
 
 	def show
-		@uploads = @test.uploads.all
-		session[:usertest_id]= params[:id]
+
+		@test = Usertest.find(params[:id])
+		@results = @test.results
+
+		session[:usertest_id] = params[:id]
 	end
 
 	def destroy
@@ -106,7 +108,6 @@ private
 		  :method_id => @test.method_id
 		})
   end
-
 
   def set_usertest_id
  		gon.push({

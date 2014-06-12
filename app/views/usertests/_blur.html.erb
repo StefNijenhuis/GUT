@@ -39,7 +39,8 @@
 
             <%= f.label "Wat heb je onthouden?" %>
             <%= f.text_area :q2 %>
-
+                
+            <%= f.input :testperson_id, :as => :hidden, :input_html => { :value => "" } %>
             <%= f.submit "Opslaan", :class => "btn nextButton" %>
         <% end %> 
 

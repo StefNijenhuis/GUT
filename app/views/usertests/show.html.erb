@@ -10,5 +10,21 @@
 	<% elsif @test.method_id === 5 %>
 	   <%= render 'glyphtest' %>
 	<% end %>
+<% else %>
+
+<h1> Resultaten </h1>
+ <% @results.each do |r| %>
+
+	<%= r.testperson.id %>
+ 	<%= r.testperson.created_at %>
+ 	<%= r.testperson.browser %>
+ 	<%= r.testperson.os %>
+ 	<%= r.testperson.ip %>
+ 	<%= r.testperson.width %>
+ 	<%= r.testperson.height %>
+	<%= r.result["q1"] %>
+	<%= r.result["q2"] %>
+ <% end %>
+
 <% end %>
 

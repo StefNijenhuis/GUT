@@ -2,7 +2,10 @@ $(window).load(function(){
 
 	/* GON 1= Memory test, 2= Blur test, 3= Grayscale test, 4= ABtest, 5= Glyphtest */
 
+
 	buildUp();
+	sendData();
+
 	function buildUp(){
 		timer = $('#timer');
 		time = timer.data('time');
@@ -116,56 +119,64 @@ $(window).load(function(){
 		}
 
 		if(next_step_nr == last_step_nr){
-			//AJAX SEND FORM ELEMENTS
-			console.log(choice);
-			console.log('AJAX SEND FORM ELEMENTS');
 			
 		}
 	}
 
-	$.ajax({
-		dataType: "json",
-		url: "http://jsonip.appspot.com?callback=?",
-		async : false,
-		success: function(data){
-			ip = data.ip;
+	function sendData(){
+		// get ip
+		$.ajax({
+			dataType: "json",
+			url: "http://jsonip.appspot.com?callback=?",
+			async : false,
+			success: function(data){
+				ip = data.ip;
 
-			buildUpData(ip);
+				buildUpData(ip);
+			}
+		});	
+
+		// get resolution
+		height 	= screen.height; 
+		width 	= screen.width;
+
+		// get browser
+		var browser, sUsrAg = navigator.userAgent;
+
+		if(sUsrAg.indexOf("Chrome") > -1) {
+		    browser = "Google Chrome";
+		} else if (sUsrAg.indexOf("Safari") > -1) {
+		    browser = "Apple Safari";
+		} else if (sUsrAg.indexOf("Opera") > -1) {
+		    browser = "Opera";
+		} else if (sUsrAg.indexOf("Firefox") > -1) {
+		    browser = "Mozilla Firefox";
+		} else if (sUsrAg.indexOf("MSIE") > -1) {
+		    browser = "Microsoft Internet Explorer";
 		}
-	});	
 
-	height 	= screen.height; 
-	width 	= screen.width;
+		// prepare data for ajax post
+		function buildUpData(ip){
+			data = {
+				'browser'		: browser,
+				'width'			: width,
+				'height'		: height,
+				'ip' 			: ip,
+				'usertest_id' 	: gon.usertest_id
+			};	
 
-	var browser, sUsrAg = navigator.userAgent;
+		//post the data
+			$.ajax({
+				type: "POST",
+				url: "/testpeople",
+				data: { testperson_params: data },
+				success: function(response) {
 
-	if(sUsrAg.indexOf("Chrome") > -1) {
-	    browser = "Google Chrome";
-	} else if (sUsrAg.indexOf("Safari") > -1) {
-	    browser = "Apple Safari";
-	} else if (sUsrAg.indexOf("Opera") > -1) {
-	    browser = "Opera";
-	} else if (sUsrAg.indexOf("Firefox") > -1) {
-	    browser = "Mozilla Firefox";
-	} else if (sUsrAg.indexOf("MSIE") > -1) {
-	    browser = "Microsoft Internet Explorer";
+					alert(response.id);
+					$('#result_testperson_id').val(response.id);
+				}
+			});				
+		}
 	}
-
-	function buildUpData(ip){
-		data = {
-			'os'			: browser,
-			'width'			: width,
-			'height'		: height,
-			'ip' 			: ip,
-			'usertest_id' 	: gon.usertest_id 
-		};	
-
-		// $.ajax({
-		// 	type: "POST",
-		// 	url: "/testpeople",
-		// 	data: { testperson_params: data }
-		// });
-	}
-
 
 });
