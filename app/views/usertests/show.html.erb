@@ -13,15 +13,20 @@
 <% else %>
 
 <h1> Resultaten </h1>
- <% @results.each do |r| %>
 
-	<%= r.testperson.id %>
- 	<%= r.testperson.created_at %>
- 	<%= r.testperson.browser %>
- 	<%= r.testperson.os %>
- 	<%= r.testperson.ip %>
- 	<%= r.testperson.width %>
- 	<%= r.testperson.height %>
+
+ <% @results.each do |r| %>
+	
+	<% if r.testperson %>
+		<%= r.testperson.id %>
+	 	<%= r.testperson.created_at %>
+	 	<%= r.testperson.browser %>
+	 	<%= r.testperson.os %>
+	 	<%= r.testperson.ip %>
+	 	<%= r.testperson.width %>
+	 	<%= r.testperson.height %>
+	<% end %>
+	
 	<%= r.result["q1"] %>
 	<%= r.result["q2"] %>
  <% end %>

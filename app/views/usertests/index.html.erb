@@ -8,6 +8,7 @@
 				<% if current_user.id == t.user_id %>
 				<%= link_to "Delen", share_usertest_path(t) %>
 		    	<%= link_to "bewerken", edit_usertest_path(t) %>
+		    	<%= link_to "Resultaten bekijken", usertest_path(t) %>
 		    	<%= link_to 'Verwijderen', usertest_path(t), method: :delete, data: { confirm: 'Weet je het zeker?' } %>
 		    <% end %>
 			</div>
