@@ -15,6 +15,7 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require RRSSB
+//= require Chart
 
 /* GON 1= Memory test, 2= Blur test, 3= Grayscale test, 4= ABtest, 5= Glyphtest */
 

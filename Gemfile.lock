@@ -37,6 +37,8 @@ GEM
       activesupport (>= 3.2.0)
       json (>= 1.7)
       mime-types (>= 1.16)
+    chart-js-rails (0.0.6)
+      railties (> 3.1)
     ckeditor (4.0.11)
       mime-types
       orm_adapter (~> 0.5.0)
@@ -174,6 +176,7 @@ PLATFORMS
 DEPENDENCIES
   bootstrap-datepicker-rails
   carrierwave
+  chart-js-rails
   ckeditor
   coffee-rails (~> 4.0.0)
   debugger
