@@ -12,38 +12,17 @@
 	<% end %>
 <% else %>
 
-<div class="content-container">
-<h1>Resultaten van de <%= @test.title %></h1>
-<h2><%= @results.count %> Mensen hebben de test gedaan</h2>
-	<table id="results" width="100%">
-		<thead>
-			<tr>
-				<td>Nummer</td>
-				<td>Gedaan op</td>
-				<td>Browser</td>
-				<td>IP</td>
-				<td>Resolutie</td>
-				<td>Wat viel je het als eerst op?</td>
-				<td>Wat heb je onthouden?</td>
-			</tr>
-		</thead>
-		<tbody>
-	
-			 <% @results.each do |r| %>
-				<% if r.testperson %>
-					<tr>
-						<td><%= r.testperson.id %></td>
-					<td><%= r.testperson.created_at.strftime("Test gedaan op  %m/%d/%Y om %I:%M%p") %></td>
-					 	<td><%= r.testperson.browser %></td>
-						<td><%= r.testperson.ip %></td>
-					 	<td><%= r.testperson.width %> x <%= r.testperson.height %></td>
-					 	<td><%= r.result["q1"] %></td>
-					 	<td><%= r.result["q2"] %></td>
-					</tr>
-				<% end %>
-			 <% end %>
-		</tbody>
-	</table>
-</div>
+<% if @test.method_id === 1 %>
+	<%= render 'memory_results' %>
+<% elsif @test.method_id === 2 %>
+    <%= render 'memory_results' %>
+<% elsif @test.method_id === 3 %>
+    <%= render 'memory_results' %>
+<% elsif @test.method_id === 4 %>
+   <%= render 'abtest_results' %>
+<% elsif @test.method_id === 5 %>
+   <%= render 'glyphtest_results' %>
+<% end %>
+
 <% end %>
 

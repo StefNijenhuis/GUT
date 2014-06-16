@@ -24,23 +24,28 @@ $( document ).ready(function() {
 	$( "#usertest_method_id" ).change(function() {
 		method = $("#usertest_method_id").val();
 
+		$('#usertest_test_time').val(10);
+
 		if(method){
 			if(method == 5){
 				$('.glyphtest').show(1000);
 				$('.singleImage').hide();
 				$('.multipleImages').hide();
+				$('#usertest_test_time').val(30);
 			}
 
 			if(method == 1 || method == 2 || method == 3){
 				$('.glyphtest').hide();
 				$('.multipleImages').hide();
 				$('.singleImage').show(1000);
+				$('#usertest_test_time').val(10);
 			}
 
 			if(method == 4){
 				$('.glyphtest').hide();
 				$('.singleImage').hide();
 				$('.multipleImages').show(1000);
+				$('#usertest_test_time').val(10);
 			}
 
 		}
