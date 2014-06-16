@@ -1,8 +1,6 @@
 $(window).load(function(){
 
 	/* GON 1= Memory test, 2= Blur test, 3= Grayscale test, 4= ABtest, 5= Glyphtest */
-
-
 	buildUp();
 
 	function buildUp(){
@@ -157,7 +155,6 @@ $(window).load(function(){
 			    browser = "Microsoft Internet Explorer";
 			}
 
-
 			data = {
 				'browser'		: browser,
 				'width'			: width,
@@ -166,9 +163,6 @@ $(window).load(function(){
 				'usertest_id' 	: gon.usertest_id
 			};
 
-		//post the data
-		console.log(data);
-		
 			$.ajax({
 				type: "POST",
 				url: "/testpeople",

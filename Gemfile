@@ -58,6 +58,10 @@ group :doc do
   gem 'sdoc', require: false
 end
 
+group :development, :test do
+    gem 'railroady'
+end
+
 gem "letter_opener", :group => :development
 
 # Use ActiveModel has_secure_password
