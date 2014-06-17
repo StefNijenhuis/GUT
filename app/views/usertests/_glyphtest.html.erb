@@ -12,14 +12,14 @@
             <h3><%= @test.title %></h3>
         </header>
 
-    	<div id="timer" data-time="1"></div>
+    	<div id="timer" data-time="30"></div>
 
     	<div id="test">
     		<div class="step" data-step="1">
     			<h2>Stap 1</h2>
 
                 <p><%= @test.introtext %></p>
-    			<p>Voor 10 seconden zult u kijken naar het ontwerp voor een website. De teksten zijn onleesbaar gemaakt, dus concentreer u op het ontwerp. Na 10 seconden wordt u gevraagd waar u denkt dat het ontwerp voor bedoeld is.</p>
+    			<p>Voor 30 seconden zult u kijken naar het ontwerp voor een website. De teksten zijn onleesbaar gemaakt, dus concentreer u op het ontwerp. Na 30 seconden wordt u gevraagd waar u denkt dat het ontwerp voor bedoeld is.</p>
 
     			<button class="btn nextButton">Begin met test</button>
     		</div>
@@ -38,17 +38,17 @@
                     <%= f.label "Waar denk je dat deze website voor dient?" %>
                     <%= field_set_tag "glyphoptions", :class => "multipleChoice" do %>
                         
-                        <%= @test.glyphoption1 %>
+<!--                         <%= @test.glyphoption1 %>
                         <%= f.radio_button :glyphoption, @test.glyphoption1 %>
 
                         <%= @test.glyphoption2 %>
                         <%= f.radio_button :glyphoption, @test.glyphoption2 %>
 
                         <%= @test.glyphoption3 %>
-                        <%= f.radio_button :glyphoption, @test.glyphoption3 %>
+                        <%= f.radio_button :glyphoption, @test.glyphoption3 %> -->
 
 
-<!--                         <%= f.label @test.glyphoption1, :class => "btn" do %>
+                        <%= f.label @test.glyphoption1, :class => "btn" do %>
                             <%= @test.glyphoption1 %>
                             <%= f.radio_button :glyphoption, @test.glyphoption1 %>
                         <% end %>
@@ -61,7 +61,7 @@
                         <%= f.label @test.glyphoption3, :class => "btn" do %>
                             <%= @test.glyphoption3 %>
                             <%= f.radio_button :glyphoption, @test.glyphoption3 %>
-                        <% end %> -->
+                        <% end %>
                         
                     <% end %>
 

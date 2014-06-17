@@ -23,24 +23,6 @@ $(window).load(function(){
 
 		$('*[data-step="1"]').addClass('currentStep');
 
-		if (gon.method_id === 2) {
-			var vague = $('.blur').Vague({
-				intensity:      40,      
-				forceSVGUrl:    false
-			});
-
-			vague.blur();
-
-			vague.animate(
-			  20,
-			  {
-			    duration:10000,
-			    easing: 'linear'
-			  }
-			).done(function(){
-			    
-			});
- 		} 
 	}
 
 	$('.nextButton').on('click', function(){
@@ -100,6 +82,27 @@ $(window).load(function(){
 
 		cur_step.removeClass('currentStep');
 		next_step.addClass('currentStep');
+
+
+		if (gon.method_id === 2 && cur_step_nr == 1) {
+			var vague = $('.blur').Vague({
+				intensity:      40,      
+				forceSVGUrl:    false
+			});
+
+			vague.blur();
+
+			vague.animate(
+			  10,
+			  {
+			    duration:10000,
+			    easing: 'linear'
+			  }
+			).done(function(){
+			    
+			});
+ 		} 
+
 
 		if(next_step_nr == 2){
 

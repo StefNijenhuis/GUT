@@ -42,6 +42,7 @@ class UsertestsController < ApplicationController
 
 		@test = Usertest.find(params[:id])
 		@results = @test.results
+		@uploads = @test.uploads
 
 		session[:usertest_id] = params[:id]
 	end
