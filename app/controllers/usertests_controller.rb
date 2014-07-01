@@ -95,6 +95,10 @@ class UsertestsController < ApplicationController
 		@test = Usertest.find(params[:id])
 	end
 
+	def hstorecount
+		Result.where("result @> (:key => :value)", :key => 'abtest', :value => '1')
+	end
+
 private
   def set_test
     @test = Usertest.find(params[:id])
