@@ -10,7 +10,7 @@ class Usertest < ActiveRecord::Base
     scope :published, where(['status = ?', true])
 
    has_many :uploads
-   has_many :results
+   has_many :results, dependent: :destroy
    
    accepts_nested_attributes_for :uploads
 

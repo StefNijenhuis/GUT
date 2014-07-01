@@ -9,8 +9,7 @@
 				<td>Browser</td>
 				<td>IP</td>
 				<td>Resolutie</td>
-				<td>Wat viel je het als eerst op?</td>
-				<td>Wat heb je onthouden?</td>
+				<td>Welke vind je beter?</td>
 			</tr>
 		</thead>
 		<tbody>
@@ -23,11 +22,17 @@
 					 	<td><%= r.testperson.browser %></td>
 						<td><%= r.testperson.ip %></td>
 					 	<td><%= r.testperson.width %> x <%= r.testperson.height %></td>
-					 	<td><%= r.result["q1"] %></td>
-					 	<td><%= r.result["q2"] %></td>
+					 	<td><%= r.result["abtest"] %></td>
 					</tr>
 				<% end %>
+				
 			 <% end %>
 		</tbody>
 	</table>
+		
+		<div class="abresult_container">
+		<% @uploads.each_with_index do |p, index| %>
+			<%= image_tag p.photo_url, :class => "abChoice", :data => {:ab => index} %>
+		<% end %>
+		</div>
 </div>
