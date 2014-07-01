@@ -35,6 +35,7 @@
     
     <%= simple_form_for :result, :url => {:action => :create,  :controller => "results"}, :class => "simple_form" do |f|%>
         <%= f.hidden_field :abtest %>
+        <%= f.input :testperson_id, :as => :hidden, :input_html => { :value => "" } %>
     <% end %>
 
     <div class="step" data-step="3">

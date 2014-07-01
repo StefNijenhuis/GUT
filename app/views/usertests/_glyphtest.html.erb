@@ -67,6 +67,7 @@
 
                     <%= f.label "Waaraan kon je dat herkennen?" %>
                     <%= f.text_area :q1 %>
+                    <%= f.input :testperson_id, :as => :hidden, :input_html => { :value => "" } %>
 
                     <%= f.submit "Opslaan" %>
                 <% end %> 

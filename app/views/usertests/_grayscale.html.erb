@@ -37,6 +37,7 @@
             
             <%= f.label "Waar denk je dat deze afbeelding voor dient?" %>
             <%= f.text_area :q1 %>
+            <%= f.input :testperson_id, :as => :hidden, :input_html => { :value => "" } %>
 
             <%= f.submit "Opslaan" %>
         <% end %> 
