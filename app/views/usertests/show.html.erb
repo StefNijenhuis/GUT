@@ -12,16 +12,22 @@
 	<% end %>
 <% else %>
 
-<% if @test.method_id === 1 %>
-	<%= render 'memory_results' %>
-<% elsif @test.method_id === 2 %>
-    <%= render 'memory_results' %>
-<% elsif @test.method_id === 3 %>
-    <%= render 'memory_results' %>
-<% elsif @test.method_id === 4 %>
-   <%= render 'abtest_results' %>
-<% elsif @test.method_id === 5 %>
-   <%= render 'glyphtest_results' %>
+<% if @results.count > 0 %>
+	<% if @test.method_id === 1 %>
+		<%= render 'memory_results' %>
+	<% elsif @test.method_id === 2 %>
+	    <%= render 'memory_results' %>
+	<% elsif @test.method_id === 3 %>
+	    <%= render 'memory_results' %>
+	<% elsif @test.method_id === 4 %>
+	   <%= render 'abtest_results' %>
+	<% elsif @test.method_id === 5 %>
+	   <%= render 'glyphtest_results' %>
+	<% end %>
+<% else %>
+	<div class="content-container">
+		<h1> Er zijn nog geen resultaten </h1>
+	</div>
 <% end %>
 
 <% end %>

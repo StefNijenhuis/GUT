@@ -35,6 +35,10 @@ $(window).load(function(){
 
 		$(this).addClass('selected');
 		choice = $(this).data('ab');
+
+		$('#result_abtest').val(choice);
+
+		$( ".simple_form" ).submit();
 	});
 
 	function startListening(){

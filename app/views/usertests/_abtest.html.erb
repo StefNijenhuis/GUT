@@ -32,6 +32,10 @@
                 <% end %>
             </div>
     </div>
+    
+    <%= simple_form_for :result, :url => {:action => :create,  :controller => "results"}, :class => "simple_form" do |f|%>
+        <%= f.hidden_field :abtest %>
+    <% end %>
 
     <div class="step" data-step="3">
         <h2>Einde test</h2>
