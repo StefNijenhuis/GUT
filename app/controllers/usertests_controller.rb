@@ -96,7 +96,12 @@ class UsertestsController < ApplicationController
 	end
 
 	def abtest_count
-		return ab = Result.where("result -> 'abtest' = '1' AND usertest_id = ? ", params[:id]).count
+		abcountarray = []
+
+		ab1 = Result.where("result -> 'abtest' = '0' AND usertest_id = ? ", params[:id]).count
+		ab2 = Result.where("result -> 'abtest' = '1' AND usertest_id = ? ", params[:id]).count
+
+		abcountarray.push(ab1, ab2)
 	end
 
 
