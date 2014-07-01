@@ -26,15 +26,19 @@
 					</tr>
 				<% end %>
 			 <% end %>
-			
-			<%= abtest_count.inspect %>
-
 		</tbody>
 	</table>
 		
 		<div class="abresult_container">
 		<% @uploads.each_with_index do |p, index| %>
+			<div class="abresult">
 			<%= image_tag p.photo_url, :class => "abChoice", :data => {:ab => index} %>
-		<% end %>
+			<% if index == 0 %>
+				<%= abtest_count.at(0) %>
+			<% elsif index == 1 %>
+				<%= abtest_count.at(1) %>
+			<% end %>
+			</div>
+ 		<% end %>
 		</div>
 </div>
