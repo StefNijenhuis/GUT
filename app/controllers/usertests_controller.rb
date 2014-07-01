@@ -2,6 +2,7 @@ class UsertestsController < ApplicationController
 	before_filter :authenticate_user!, :except => [:show, :check_cookie]
 	before_filter :check_cookie, :only => [:show]
 	before_action :set_test, :set_method_id, :set_usertest_id, :get_methodname, only: [:show, :edit, :update, :destroy, :test]
+	helper_method :abtest_count
 
 	def new
 		@test = Usertest.new()
@@ -95,9 +96,14 @@ class UsertestsController < ApplicationController
 		@test = Usertest.find(params[:id])
 	end
 
-	def hstorecount
-		Result.where("result @> (:key => :value)", :key => 'abtest', :value => '1')
+	def abtest_count
+
+
+		return abresult_1 = Result.where("result @> (:key => :value)", :key => 'abtest', :value => '1')
+		abresult_2 = Result.where("result @> (:key => :value)", :key => 'abtest', :value => '0')
+
 	end
+
 
 private
   def set_test
