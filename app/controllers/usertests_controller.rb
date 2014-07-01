@@ -106,7 +106,7 @@ private
   end
 
   def test_params
-    params.require(:usertest).permit(:title, :introtext, :outrotext, :method_id, :start_date, :end_date, :status, :product, :url, :glyphoption1, :glyphoption2, :glyphoption3, uploads_attributes: [:id, :usertest_id, :photo])
+    params.require(:usertest).permit(:title, :introtext, :outrotext, :method_id, :start_date, :end_date, :status, :product, :url, :glyphoption1, :glyphoption2, :glyphoption3, :test_time, uploads_attributes: [:id, :usertest_id, :photo])
   end
 
   def set_method_id
