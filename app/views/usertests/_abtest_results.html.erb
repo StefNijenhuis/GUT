@@ -1,6 +1,10 @@
 <div class="content-container">
 <h1>Resultaten van de <%= @test.title %></h1>
-<h2><%= @results.count %> Mensen hebben de test gedaan</h2>
+<% if @results.count === 1 %>
+	<h2><%= @results.count %> Persoon heeft de test gedaan</h2>
+<% elsif @results.count > 1 %>
+	<h2><%= @results.count %> Mensen hebben de test gedaan</h2>
+<% end %>
 	<table id="results" width="100%">
 		<thead>
 			<tr>
