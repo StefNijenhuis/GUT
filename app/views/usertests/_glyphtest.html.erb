@@ -12,7 +12,11 @@
             <h3><%= @test.title %></h3>
         </header>
 
-    	<div id="timer" data-time="30"></div>
+        <% if @test.test_time %>
+             <div id="timer" data-time="<%= @test.test_time %>"></div>
+        <% else %>
+            <div id="timer" data-time="30"></div>
+        <% end %>
 
     	<div id="test">
     		<div class="step" data-step="1">
