@@ -78,7 +78,6 @@ class UsertestsController < ApplicationController
 		 @tests = Usertest.where(nil) # creates an anonymous scope
   		 @tests = @tests.finished() if params[:finished].present?
 
-  		 @tests.inspect
 	end
 
 
@@ -97,11 +96,7 @@ class UsertestsController < ApplicationController
 	end
 
 	def abtest_count
-
-
-		return abresult_1 = Result.where("result @> (:key => :value)", :key => 'abtest', :value => '1')
-		abresult_2 = Result.where("result @> (:key => :value)", :key => 'abtest', :value => '0')
-
+		return ab = Result.where("result -> 'abtest' = '1' AND usertest_id = ? ", params[:id]).count
 	end
 
 

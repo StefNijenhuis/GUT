@@ -36,6 +36,7 @@ gem 'bootstrap-datepicker-rails'
 gem 'therubyracer'
 gem 'less-rails'
 
+
 gem 'ckeditor'
 gem 'devise'
 
@@ -60,6 +61,7 @@ end
 
 group :development, :test do
     gem 'railroady'
+    gem 'quiet_assets'
 end
 
 gem "letter_opener", :group => :development
