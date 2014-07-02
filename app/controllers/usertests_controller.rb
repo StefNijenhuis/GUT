@@ -1,8 +1,8 @@
 class UsertestsController < ApplicationController
 	before_filter :authenticate_user!, :except => [:show, :check_cookie]
 	before_filter :check_cookie, :only => [:show]
-	before_action :set_test, :set_method_id, :set_usertest_id, :get_methodname, only: [:show, :edit, :update, :destroy, :test]
-	helper_method :abtest_count
+	before_action :set_test, :set_method_id, :set_methodname, :set_usertest_id, only: [:show, :edit, :update, :destroy, :test]
+	helper_method :abtest_count, :get_methodname
 
 	def new
 		@test = Usertest.new()
@@ -13,7 +13,7 @@ class UsertestsController < ApplicationController
 		@test = Usertest.new(test_params)
 		@test.status = 0
 		@test.user = current_user
-		
+
 		if @test.save
 
 			if params[:uploads]
@@ -68,7 +68,7 @@ class UsertestsController < ApplicationController
 
 	def publish
 		@p = Usertest.find(params[:id])
-  		@p.toggle!(:status)  
+  		@p.toggle!(:status)
 	end
 
 
@@ -98,12 +98,35 @@ class UsertestsController < ApplicationController
 	def abtest_count
 		abcountarray = []
 
-		ab1 = Result.where("result -> 'abtest' = '0' AND usertest_id = ? ", params[:id]).count
-		ab2 = Result.where("result -> 'abtest' = '1' AND usertest_id = ? ", params[:id]).count
+		ab1 = Result.where("result -> 'abtest' = '1' AND usertest_id = ? ", params[:id]).count
+		ab2 = Result.where("result -> 'abtest' = '2' AND usertest_id = ? ", params[:id]).count
 
 		abcountarray.push(ab1, ab2)
 	end
 
+
+	def get_methodname(method_id)
+
+		if method_id === 1
+			@methodname = "Memory test"
+
+		elsif method_id  === 2
+			@methodname = "Blur test"
+
+		elsif method_id  === 3
+			@methodname = "Zwart wit test"
+
+		elsif method_id  === 4
+			@methodname = "AB test"
+
+		elsif method_id  === 5
+			@methodname = "Onleesbaar test"
+		else
+			@methodname = "Geen methode gevonden"
+		end
+
+		return @methodname
+	end
 
 private
   def set_test
@@ -111,7 +134,23 @@ private
   end
 
   def test_params
-    params.require(:usertest).permit(:title, :introtext, :outrotext, :method_id, :start_date, :end_date, :status, :product, :url, :glyphoption1, :glyphoption2, :glyphoption3, :test_time, uploads_attributes: [:id, :usertest_id, :photo])
+    params.require(:usertest).permit(:title,
+     																 :introtext,
+     																 :outrotext,
+     																 :method_id,
+     																 :start_date,
+																     :end_date,
+																     :status,
+																     :product,
+																     :url,
+																     :glyphoption1,
+																     :glyphoption2,
+																     :glyphoption3,
+																     :test_time,
+																     uploads_attributes: [:id,
+																	      									:usertest_id,
+																	      									:photo
+																      										])
   end
 
   def set_method_id
@@ -124,10 +163,9 @@ private
  		gon.push({
  		  :usertest_id => @test.id
  		})
-	end
- 
+  end
 
-	def get_methodname 
+  def set_methodname
 
 		if @test.method_id === 1
 			@methodname = "Memory test"
@@ -137,15 +175,16 @@ private
 
 		elsif @test.method_id  === 3
 			@methodname = "Zwart wit test"
-			
+
 		elsif @test.method_id  === 4
 			@methodname = "AB test"
 
 		elsif @test.method_id  === 5
 			@methodname = "Onleesbaar test"
 		else
-			abort("Er is geen methode geselecteerd, check UsertestsController")
-		end		
+			@methodname = "Geen methode gevonden"
+		end
+
 	end
 
 end

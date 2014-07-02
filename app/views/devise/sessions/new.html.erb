@@ -1,24 +1,29 @@
-
 <div class="login">
-      
-      <div class="login-header">
-		  <div class="logo">
-		    <label>GUT</label>
-		  </div>
-      </div>
+  <div class="login-header">
+    <div class="logo">
+      <label>GUT</label>
+    </div>
+  </div>
 
-	<%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-	  <div class="form-inputs">
-	    <%= f.input :email, required: false, autofocus: true %>
-	    <%= f.input :password, required: false %>
-	   <!--  <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %> -->
-	  </div>
+  <%= form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f| %>
+    <div><%= f.label :email %><br />
+    <%= f.email_field :email %></div>
 
-	  <div class="form-actions">
-	    <%= f.button :submit, "Inloggen" %>
-	  </div>
-	<% end %>
+    <div><%= f.label "Wachtwoord" %><br />
+    <%= f.password_field :password %></div>
 
-	<%= render "devise/shared/links" %>
+    <% if devise_mapping.rememberable? -%>
+    <div><%= f.check_box :remember_me %> <%= f.label "Onthouden?" %></div>
 
-	</div>
+    <br/>
+
+    <%= render "devise/shared/links" %>
+    <% end -%>
+
+    <div><%= f.submit t('.sign_in', :default => "Sign in") %></div>
+
+  <% end %>
+
+</div>
+
+

@@ -32,7 +32,7 @@
             <div class="abcontainer">
                 <h1 style="text-align:center; padding-bottom:10px;">Welke vind je beter?</h1>
                 <% @uploads.each_with_index do |p, index| %>
-                  <%= image_tag p.photo_url, :class => "abChoice", :data => {:ab => index} %>
+                  <%= image_tag p.photo_url, :class => "abChoice", :data => {:ab => index + 1} %>
                 <% end %>
             </div>
     </div>

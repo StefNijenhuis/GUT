@@ -5,6 +5,22 @@
 <% elsif @results.count > 1 %>
 	<h2><%= @results.count %> Mensen hebben de test gedaan</h2>
 <% end %>
+
+	<div class="abresult_container">
+		<% @uploads.each_with_index do |p, index| %>
+			<div class="abresult">
+			<%= image_tag p.photo_url, :class => "abChoice", :data => {:ab => index} %>
+				<div class="aboverlay">
+				<% if index == 0 %>
+					<%= abtest_count.at(0) %>
+				<% elsif index == 1 %>
+					<%= abtest_count.at(1) %>
+				<% end %>
+				</div>
+			</div>
+ 		<% end %>
+		</div>
+
 	<table id="results" width="100%">
 		<thead>
 			<tr>
@@ -32,19 +48,5 @@
 			 <% end %>
 		</tbody>
 	</table>
-		
-		<div class="abresult_container">
-		<% @uploads.each_with_index do |p, index| %>
-			<div class="abresult">
-			<%= image_tag p.photo_url, :class => "abChoice", :data => {:ab => index} %>
-				<div class="aboverlay">
-				<% if index == 0 %>
-					<%= abtest_count.at(0) %>
-				<% elsif index == 1 %>
-					<%= abtest_count.at(1) %>
-				<% end %>
-				</div>
-			</div>
- 		<% end %>
-		</div>
+
 </div>

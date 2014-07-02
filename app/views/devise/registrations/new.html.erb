@@ -1,19 +1,25 @@
-<h2>Registreren</h2>
 
-<div class="content-container">
-	<%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), :class => "addform") do |f| %>
-	  <%= f.error_notification %>
+<div class="login register">
+  <div class="login-header">
+    <div class="logo">
+      <label>GUT</label>
+    </div>
+  </div>
 
-	  <div class="form-inputs">
-	    <%= f.input :email, required: true, autofocus: true %>
-	    <%= f.input :password, required: true %>
-	    <%= f.input :password_confirmation, required: true %>
-	  </div>
+  <%= form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f| %>
+    <%= devise_error_messages! %>
 
-	  <div class="form-actions">
-	    <%= f.button :submit, "Registreren" %>
-	  </div>
-	<% end %>
+    <div><%= f.label :email %><br />
+    <%= f.email_field :email %></div>
 
-	<%= render "devise/shared/links" %>
+    <div><%= f.label "Wachtwoord" %><br />
+    <%= f.password_field :password %></div>
+
+    <div><%= f.label "Wachtwoord confirmatie" %><br />
+    <%= f.password_field :password_confirmation %></div>
+
+    <div><%= f.submit t('.sign_up', :default => "Sign up") %></div>
+  <% end %>
+
+  <%= render "devise/shared/links" %>
 </div>
