@@ -1,13 +1,13 @@
-<div class="content-container">       
+<div class="content-container">
 <h1><%= @test.title %> Delen</h1>
 
 <h2> Kopieer en plak de link </h2>
+
 <div class="copypasterino">
-  <%= usertest_url(@test) %>
+  <input type="text" value="<%= usertest_url(@test) %>"/>
 </div>
 
 <h2>Deel via social media</h2>
-<br/>
        <ul class="rrssb-buttons clearfix">
                     <li class="email">
                         <!-- Replace subject with your message using URL Endocding: http://meyerweb.com/eric/tools/dencoder/ -->
@@ -19,7 +19,7 @@
                         </a>
                     </li>
                     <li class="facebook">
-                        <!-- Replace with your URL. For best results, make sure you page has the proper FB Open Graph tags in header: 
+                        <!-- Replace with your URL. For best results, make sure you page has the proper FB Open Graph tags in header:
                         https://developers.facebook.com/docs/opengraph/howtos/maximizing-distribution-media-content/ -->
                         <a href='https://www.facebook.com/sharer/sharer.php?u=<%= usertest_url(@test) %>' class="popup" target="_blank">
                             <span class="icon">
