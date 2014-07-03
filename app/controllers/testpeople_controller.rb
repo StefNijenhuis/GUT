@@ -11,6 +11,15 @@ class TestpeopleController < ApplicationController
 
 	private
 	  def testperson_params
-	    params.require(:testperson_params).permit(:browser, :ip, :start_date, :end_date, :usertest_id, :width, :height, :id)
+	    params.require(:testperson_params).permit(
+                                                  :browser,
+                                                  :ip,
+                                                  :start_date,
+                                                  :end_date,
+                                                  :usertest_id,
+                                                  :width,
+                                                  :height,
+                                                  :id
+                                                )
 	  end
 end

@@ -1,4 +1,5 @@
 class UsertestsController < ApplicationController
+
 	before_filter :authenticate_user!, :except => [:show, :check_cookie]
 	before_filter :check_cookie, :only => [:show]
 	before_action :set_test, :set_method_id, :set_methodname, :set_usertest_id, only: [:show, :edit, :update, :destroy, :test]
@@ -28,14 +29,16 @@ class UsertestsController < ApplicationController
 		end
 	end
 
+
 	def check_cookie
 		if !current_user
 
 			if cookies.permanent.signed[:test_done] == params[:id]
-				# render 'testdone'
+				 render 'testdone'
 			else
 				cookies.permanent.signed[:test_done] = params[:id]
 			end
+
 		end
 	end
 
@@ -46,6 +49,11 @@ class UsertestsController < ApplicationController
 		@uploads = @test.uploads
 
 		session[:usertest_id] = params[:id]
+
+    if !current_user && @test.end_date.strftime("%d-%m-%Y") == Date.today.strftime("%d-%m-%Y")
+      render 'testrunout'
+    end
+
 	end
 
 	def destroy
@@ -74,10 +82,8 @@ class UsertestsController < ApplicationController
 
 	def index
 		#@tests = Usertest.all()
-
-		 @tests = Usertest.where(nil) # creates an anonymous scope
-  		 @tests = @tests.finished() if params[:finished].present?
-
+		@tests = Usertest.where(nil) # creates an anonymous scope
+  	@tests = @tests.finished() if params[:finished].present?
 	end
 
 
