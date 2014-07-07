@@ -66,6 +66,7 @@ GEM
     devise-i18n-views (0.2.8)
     erubis (2.7.0)
     execjs (2.0.2)
+    formatted_rails_logger (0.1.0)
     gon (5.0.4)
       actionpack (>= 2.3.0)
       json
@@ -102,8 +103,12 @@ GEM
     nav_lynx (1.1.0)
       rails (>= 3.2.13)
     orm_adapter (0.5.0)
+    pdf-core (0.2.5)
     pg (0.17.1)
     polyglot (0.3.4)
+    prawn (1.1.0)
+      pdf-core (~> 0.2.5)
+      ttfunk (~> 1.2.0)
     quiet_assets (1.0.3)
       railties (>= 3.1, < 5.0)
     rack (1.5.2)
@@ -160,6 +165,7 @@ GEM
     treetop (1.4.15)
       polyglot
       polyglot (>= 0.3.1)
+    ttfunk (1.2.0)
     turbolinks (2.2.2)
       coffee-rails
     twitter-bootstrap-rails (2.2.8)
@@ -186,6 +192,7 @@ DEPENDENCIES
   debugger
   devise
   devise-i18n-views
+  formatted_rails_logger
   gon
   jbuilder (~> 1.2)
   jquery-rails
@@ -195,6 +202,7 @@ DEPENDENCIES
   mini_magick (~> 3.7.0)
   nav_lynx
   pg (~> 0.17.1)
+  prawn (~> 1.1.0)
   quiet_assets
   railroady
   rails (= 4.0.4)

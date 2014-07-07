@@ -29,7 +29,6 @@ class UsertestsController < ApplicationController
 		end
 	end
 
-
 	def check_cookie
 		if !current_user
 
@@ -50,7 +49,7 @@ class UsertestsController < ApplicationController
 
 		session[:usertest_id] = params[:id]
 
-    if !current_user && @test.end_date.strftime("%d-%m-%Y") == Date.today.strftime("%d-%m-%Y")
+    if !current_user && @test.end_date.strftime("%d-%m-%Y") < Date.today.strftime("%d-%m-%Y")
       render 'testrunout'
     end
 

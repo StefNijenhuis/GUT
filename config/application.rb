@@ -20,7 +20,7 @@ module GUT
     # config.i18n.load_path += Dir[Rails.root.join('my', 'locales', '*.{rb,yml}').to_s]
     config.i18n.default_locale = :nl
 
-
+    config.secret_key_base = 'blipblapblup'
     config.assets.enabled = true
     config.assets.paths << Rails.root.join('app', 'assets', 'fonts')
     config.assets.precompile += %w( .svg .eot .woff .ttf)

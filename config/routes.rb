@@ -10,12 +10,13 @@ GUT::Application.routes.draw do
   		post :publish
       get :test
       get :share
+      get :export
   	end
   end
 
   resources :users
   resources :results
   resources :testpeople
-  
+
   root to: "usertests#index"
 end
