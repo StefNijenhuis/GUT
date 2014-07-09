@@ -28,6 +28,7 @@ gem 'therubyracer'
 gem 'less-rails'
 gem 'ckeditor'
 gem 'devise'
+gem 'rails_12factor'
 
 # Gon for passing rails objects to javascript
 gem 'gon'
