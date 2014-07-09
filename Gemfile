@@ -71,7 +71,6 @@ group :production do
     gem 'pg', '~> 0.17.1'
 end
 
-gem 'sqlite3'
 gem "letter_opener", :group => :development
 
 # Use ActiveModel has_secure_password
