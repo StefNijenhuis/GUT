@@ -14,7 +14,6 @@ gem 'rails-assets-RRSSB'
 
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
-gem 'chart-js-rails'
 gem 'nav_lynx'
 
 gem 'capistrano',  '~> 3.1'
@@ -23,20 +22,10 @@ gem 'capistrano-rails', '~> 1.1'
 # Use CoffeeScript for .js.coffee assets and views
 gem 'coffee-rails', '~> 4.0.0'
 gem 'jquery-turbolinks'
-
-# See https://github.com/sstephenson/execjs#readme for more supported runtimes
-# gem 'therubyracer', platforms: :ruby
-
-# Use jquery as the JavaScript library
 gem 'jquery-rails'
 gem 'simple_form'
-
-gem 'twitter-bootstrap-rails'
-gem 'bootstrap-datepicker-rails'
 gem 'therubyracer'
 gem 'less-rails'
-
-
 gem 'ckeditor'
 gem 'devise'
 
@@ -64,23 +53,12 @@ group :development, :test do
     gem 'railroady'
     gem 'quiet_assets'
     gem 'formatted_rails_logger'
+    gem 'sqlite3'
+    gem "letter_opener"
 end
 
 group :production do
     gem 'pg', '~> 0.17.1'
-    gem 'sqlite3'
 end
 
-gem "letter_opener", :group => :development
-
-# Use ActiveModel has_secure_password
-# gem 'bcrypt', '~> 3.1.7'
-
-# Use unicorn as the app server
-# gem 'unicorn'
-
-# Use Capistrano for deployment
-# gem 'capistrano', group: :development
-
-# Use debugger
 gem 'debugger', group: [:development, :test]
