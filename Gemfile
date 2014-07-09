@@ -64,12 +64,11 @@ group :development, :test do
     gem 'railroady'
     gem 'quiet_assets'
     gem 'formatted_rails_logger'
-    gem 'sqlite3'
-
 end
 
 group :production do
     gem 'pg', '~> 0.17.1'
+    gem 'sqlite3'
 end
 
 gem "letter_opener", :group => :development
