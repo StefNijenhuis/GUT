@@ -1,7 +1,6 @@
 source 'https://rails-assets.org'
 source 'https://rubygems.org'
 
-
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.0.4'
 
@@ -50,15 +49,13 @@ group :doc do
   gem 'sdoc', require: false
 end
 
+gem 'sqlite3'
+gem 'pg', '~> 0.17.1'
+
 group :development, :test do
     gem 'railroady'
     gem 'quiet_assets'
     gem 'formatted_rails_logger'
     gem "letter_opener"
+    gem 'debugger'
 end
-
-group :production do
-    gem 'pg', '~> 0.17.1'
-end
-
-gem 'debugger', group: [:development, :test]
