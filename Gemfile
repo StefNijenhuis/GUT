@@ -6,11 +6,7 @@ source 'https://rubygems.org'
 gem 'rails', '4.0.4'
 
 # Use sqlite3 as the database for Active Record
-gem 'sqlite3'
 gem 'devise-i18n-views'
-
-# Use Postgresql as the database for Active Record
-gem 'pg', '~> 0.17.1'
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.2'
@@ -20,6 +16,9 @@ gem 'rails-assets-RRSSB'
 gem 'uglifier', '>= 1.3.0'
 gem 'chart-js-rails'
 gem 'nav_lynx'
+
+gem 'capistrano',  '~> 3.1'
+gem 'capistrano-rails', '~> 1.1'
 
 # Use CoffeeScript for .js.coffee assets and views
 gem 'coffee-rails', '~> 4.0.0'
@@ -65,6 +64,11 @@ group :development, :test do
     gem 'railroady'
     gem 'quiet_assets'
     gem 'formatted_rails_logger'
+    gem 'sqlite3'
+end
+
+group :production do
+    gem 'pg', '~> 0.17.1'
 end
 
 gem "letter_opener", :group => :development
