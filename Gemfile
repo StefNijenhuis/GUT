@@ -64,6 +64,7 @@ group :development, :test do
     gem 'railroady'
     gem 'quiet_assets'
     gem 'formatted_rails_logger'
+    gem 'sqlite3'
 
 end
 
